@@ -25,7 +25,6 @@ const McqComponent = () => {
       isClosable: true,
     });
 
-    // Reset selected option and disable the button after submission
     setSelectedOption(null);
     setIsButtonDisabled(true);
   };
@@ -57,7 +56,7 @@ const McqComponent = () => {
           m={4}
           _hover={{ bg: 'blue.600' }}
           onClick={handleButtonClick}
-          disabled={isButtonDisabled} // Disable button if no option is selected
+          disabled={isButtonDisabled} 
         >
           Submit
         </Button>
