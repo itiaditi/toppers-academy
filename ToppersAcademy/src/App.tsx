@@ -1,17 +1,17 @@
+import React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import UnitComponent from './Components/UnitComponent';
 
-import  React  from 'react'
-import './App.css'
-import UnitComponent from './Components/UnitComponent'
 
 
-function App() {
 
+const App: React.FC = () => {
   return (
-    <>
-  
-  <UnitComponent/>
-  </>
-  )
-}
+    <ChakraProvider>
+    <UnitComponent/>
 
-export default App
+    </ChakraProvider>
+  );
+};
+
+export default App;
