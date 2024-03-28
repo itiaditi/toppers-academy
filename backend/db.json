@@ -104,14 +104,32 @@
       }
       ],
     "users":[{
-
+"id":1,
+"dateOfBirth":"02/08/1997",
+"email":"aditi@gmail.com",
+"firstName":"aditi",
+"lastName":"dhiman",
+"password":"$2a$10$yFpc0rbVufdJM1BG1mJX.eT7j/D7.EE3J3GVDa.7mulZ93bHdmiL2",
+"role":"learner",
+"userName":"dhimanaditi1"
     }],
-    "learning":[{
-"learning_id":1,
-"userId":2,
-"userName":"aditi",
-"courses":[{
-
-}]
-    }]
+    "learningProfiles": [
+        {
+          "userId": 1,
+          "userName": "dhimanaditi1",
+          "courses": [
+            {
+              "courseId": 1,
+              "courseName": "Maths",
+              "unitsCompleted": [1, 2], 
+              "progress": 50
+            },
+            {
+              "courseId": 2,
+              "courseName": "Science",
+              "unitsCompleted": [3], 
+              "progress": 25 
+            }
+          ]
+        }]
 }
