@@ -1,10 +1,10 @@
 import { ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
-import { Button, Center, Flex, Grid, HStack, Image, Input, InputGroup, InputRightElement, Link, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
+import { Button, Center, Flex, Grid, HStack, Image, Input, InputGroup, InputRightElement, Link, Menu, MenuButton, MenuList} from "@chakra-ui/react";
 
 const Navbar: React.FC = () => {
     return (
         <>
-            <Flex border="1px solid gray" pr="150px" pl="150px" gap={"150px"} color={"#1865f2"} pt={"10px"} pb={"10px"}>
+            <Flex border="1px solid gray" pr="150px" pl="150px" gap={"100px"} color={"#1865f2"} pt={"10px"} pb={"10px"}>
                 <HStack gap={"30px"} flex="1">
                     <Menu>
                         <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
@@ -12,11 +12,11 @@ const Navbar: React.FC = () => {
                         </MenuButton>
                         <MenuList w={"100vw"} pr={"200px"} pl={"200px"} pt={"30px"} ml={"-100px"} fontSize={"15px"}>
                             <Grid templateColumns="repeat(5, 1fr)" gap={4}>
-                                <Link color={"black"}>MATH (NCERT)</Link>
-                                <Link color={"black"}>MATH (MAHARASHTRA)</Link>
-                                <Link color={"black"}>SCIENCE (NCERT)</Link>
-                                <Link color={"black"}>ALL STATE BOARDS</Link>
-                                <Link color={"black"}>EXPLORE MORE</Link>
+                                <Link color={"black"} fontSize={"13px"}>MATH (NCERT)</Link>
+                                <Link color={"black"} fontSize={"13px"}>MATH (MAHARASHTRA)</Link>
+                                <Link color={"black"} fontSize={"13px"}>SCIENCE (NCERT)</Link>
+                                <Link color={"black"} fontSize={"13px"}>ALL STATE BOARDS</Link>
+                                <Link color={"black"} fontSize={"13px"}>EXPLORE MORE</Link>
                                 <Link>Class 1</Link>
                                 <Link>Class 1</Link>
                                 <Link>Class 9 Phy</Link>
@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
                                 <Link></Link>
                                 <Link>Social Media Literacy</Link>
                                 <Link>Class 12</Link>
-                                <Link color={"black"}>PACE (SOE PUNJAB)</Link>
+                                <Link color={"black"} fontSize={"13px"}>PACE (SOE PUNJAB)</Link>
                                 <Link>Class 12 Bio</Link>
                                 <Link></Link>
                                 <Link>AI for Education</Link>
@@ -103,13 +103,14 @@ const Navbar: React.FC = () => {
                             children={<SearchIcon color="gray.300" />}
                         />
                     </InputGroup>
-
                 </HStack>
+
                 <Center>
-                    <Image src='.\src\assets\toppers-academy.png' alt='logo' w={"230px"} />
+                    <Image src='.\src\assets\toppers-academy.png' alt='logo'  />
                 </Center>
+
                 <HStack gap={"30px"} pl={"160px"}>
-                    <Link href="#">Donate</Link>
+                    <Link href="#" w={"75px"}>Donate <i className="fa-solid fa-arrow-up-right-from-square"></i></Link>
                     <Link href="#">LogIn</Link>
                     <Link href="#">SignUp</Link>
                 </HStack>
