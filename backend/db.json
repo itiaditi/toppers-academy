@@ -1,5 +1,117 @@
 {
     "courses":[{
-        "id":1
+        "id": 1,
+        "course": "Maths",
+        "classes": [
+          {
+            "id": 1,
+            "grade": 1,
+            "image": "https://example.com/maths_grade1.jpg",
+            "units": [
+              {
+                "id": 1,
+                "title": "Numbers from 1 to 9",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is 2 + 2?",
+                    "options": ["3", "4", "5", "6"],
+                    "correctOptionIndex": 1,
+                    "explanation": "2 + 2 equals 4."
+                  },
+                  {
+                    "id": 2,
+                    "question": "How many sides does a triangle have?",
+                    "options": ["3", "4", "5", "6"],
+                    "correctOptionIndex": 0,
+                    "explanation": "A triangle has 3 sides."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "Addition and Subtraction",
+                "mcqs": [
+                  {
+                    "id": 3,
+                    "question": "What is 5 - 3?",
+                    "options": ["1", "2", "3", "4"],
+                    "correctOptionIndex": 1,
+                    "explanation": "5 - 3 equals 2."
+                  },
+                  {
+                    "id": 4,
+                    "question": "What is 7 + 4?",
+                    "options": ["9", "10", "11", "12"],
+                    "correctOptionIndex": 2,
+                    "explanation": "7 + 4 equals 11."
+                  }
+                ]
+              }
+           
+            ]
+          },
+          {
+            "id": 2,
+            "grade": 2,
+            "image": "https://example.com/maths_grade2.jpg",
+            "units": [
+              {
+                "id": 1,
+                "title": "Multiplication and Division",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is 3 × 4?",
+                    "options": ["7", "10", "12", "15"],
+                    "correctOptionIndex": 2,
+                    "explanation": "3 × 4 equals 12."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is 15 ÷ 3?",
+                    "options": ["3", "5", "8", "15"],
+                    "correctOptionIndex": 1,
+                    "explanation": "15 ÷ 3 equals 5."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "Fractions",
+                "mcqs": [
+                  {
+                    "id": 3,
+                    "question": "What is 1/2 of 6?",
+                    "options": ["2", "3", "4", "5"],
+                    "correctOptionIndex": 2,
+                    "explanation": "1/2 of 6 equals 3."
+                  },
+                  {
+                    "id": 4,
+                    "question": "What is 3/4 of 12?",
+                    "options": ["6", "8", "9", "10"],
+                    "correctOptionIndex": 1,
+                    "explanation": "3/4 of 12 equals 9."
+                  }
+                ]
+              }
+          
+            ]
+          }
+          
+        ]
+      }
+      ],
+    "users":[{
+
+    }],
+    "learning":[{
+"learning_id":1,
+"userId":2,
+"userName":"aditi",
+"courses":[{
+
+}]
     }]
 }
