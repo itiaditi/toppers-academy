@@ -7,7 +7,7 @@
           {
             "id": 1,
             "grade": 1,
-            "image": "https://example.com/maths_grade1.jpg",
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
             "units": [
               {
                 "id": 1,
@@ -74,7 +74,7 @@
           {
             "id": 2,
             "grade": 2,
-            "image": "https://example.com/maths_grade2.jpg",
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
             "units": [
               {
                 "id": 1,
@@ -141,7 +141,7 @@
           {
             "id": 3,
             "grade": 3,
-            "image": "https://example.com/maths_grade3.jpg",
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
             "units": [
               {
                 "id": 1,
@@ -208,7 +208,7 @@
           {
             "id": 4,
             "grade": 4,
-            "image": "https://example.com/maths_grade4.jpg",
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
             "units": [
               {
                 "id": 1,
@@ -275,7 +275,7 @@
           {
             "id": 5,
             "grade": 5,
-            "image": "https://example.com/maths_grade5.jpg",
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
             "units": [
               {
                 "id": 1,
@@ -342,7 +342,7 @@
           {
             "id": 6,
             "grade": 6,
-            "image": "https://example.com/maths_grade6.jpg",
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
             "units": [
               {
                 "id": 1,
@@ -405,10 +405,502 @@
                 ]
               }
             ]
+          },
+          {
+            "id": 7,
+            "grade": 7,
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
+            "units": [
+              {
+                "id": 1,
+                "title": "Introduction to Algebra",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the value of x in the equation 3x - 5 = 10?",
+                    "options": ["5", "6", "7", "8"],
+                    "correctOptionIndex": 0,
+                    "explanation": "To find the value of x, add 5 to both sides of the equation, then divide both sides by 3."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the next number in the sequence: 3, 6, 12, 24, ...?",
+                    "options": ["48", "52", "54", "60"],
+                    "correctOptionIndex": 0,
+                    "explanation": "Each number in the sequence is multiplied by 2 to get the next number."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "Geometry and Measurement",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the area of a rectangle with length 6 units and width 4 units?",
+                    "options": ["20 square units", "24 square units", "28 square units", "30 square units"],
+                    "correctOptionIndex": 1,
+                    "explanation": "To find the area of a rectangle, multiply its length by its width."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the circumference of a circle with radius 5 units? (Use π = 3.14)",
+                    "options": ["10π units", "15π units", "20π units", "25π units"],
+                    "correctOptionIndex": 3,
+                    "explanation": "The circumference of a circle is given by the formula 2πr, where r is the radius."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "grade": 8,
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
+            "units": [
+              {
+                "id": 1,
+                "title": "Introduction to Algebra",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the value of x in the equation 3x - 5 = 10?",
+                    "options": ["5", "6", "7", "8"],
+                    "correctOptionIndex": 0,
+                    "explanation": "To find the value of x, add 5 to both sides of the equation, then divide both sides by 3."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the next number in the sequence: 3, 6, 12, 24, ...?",
+                    "options": ["48", "52", "54", "60"],
+                    "correctOptionIndex": 0,
+                    "explanation": "Each number in the sequence is multiplied by 2 to get the next number."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "Geometry and Trigonometry",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the measure of each interior angle of a regular octagon?",
+                    "options": ["135 degrees", "140 degrees", "145 degrees", "150 degrees"],
+                    "correctOptionIndex": 1,
+                    "explanation": "To find the measure of each interior angle of a regular polygon, use the formula: (n - 2) * 180 / n, where n is the number of sides."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the sine of a 30-degree angle in a right triangle?",
+                    "options": ["1", "0.5", "0.707", "0.866"],
+                    "correctOptionIndex": 2,
+                    "explanation": "The sine of an angle in a right triangle is the ratio of the length of the side opposite the angle to the length of the hypotenuse."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 9,
+            "grade": 9,
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
+            "units": [
+              {
+                "id": 1,
+                "title": "Advanced Algebra",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the solution to the equation x^2 - 4x + 4 = 0?",
+                    "options": ["x = 2", "x = 4", "x = -2", "x = -4"],
+                    "correctOptionIndex": 0,
+                    "explanation": "This equation can be factored into (x - 2)(x - 2) = 0, so the solution is x = 2."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the quadratic formula used for?",
+                    "options": ["Finding the area of a square", "Solving linear equations", "Solving quadratic equations", "Calculating slope"],
+                    "correctOptionIndex": 2,
+                    "explanation": "The quadratic formula is used to find the solutions to quadratic equations of the form ax^2 + bx + c = 0."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "Coordinate Geometry",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What are the coordinates of the midpoint of the line segment with endpoints (2, 3) and (6, 9)?",
+                    "options": ["(3, 6)", "(4, 7)", "(5, 8)", "(6, 9)"],
+                    "correctOptionIndex": 0,
+                    "explanation": "To find the midpoint of a line segment, average the x-coordinates and average the y-coordinates of the endpoints."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the slope of a line perpendicular to a line with slope 2?",
+                    "options": ["2", "-2", "1/2", "-1/2"],
+                    "correctOptionIndex": 3,
+                    "explanation": "The slopes of perpendicular lines are negative reciprocals of each other."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 10,
+            "grade": 10,
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
+            "units": [
+              {
+                "id": 1,
+                "title": "Quadratic Equations",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What are the roots of the quadratic equation x^2 - 5x + 6 = 0?",
+                    "options": ["(2, 3)", "(3, 2)", "(1, 5)", "(5, 1)"],
+                    "correctOptionIndex": 0,
+                    "explanation": "To find the roots, factorize the quadratic equation or use the quadratic formula."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the discriminant of the quadratic equation 2x^2 + 3x - 5 = 0?",
+                    "options": ["13", "-13", "11", "-11"],
+                    "correctOptionIndex": 0,
+                    "explanation": "The discriminant is given by b^2 - 4ac, where a, b, and c are coefficients of the quadratic equation."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "Trigonometry",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the value of sin(60°)?",
+                    "options": ["1/2", "√3/2", "1", "0"],
+                    "correctOptionIndex": 1,
+                    "explanation": "In a right triangle with a 30-60-90 angle configuration, sin(60°) = √3/2."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the value of tan(45°)?",
+                    "options": ["1", "√2", "0", "1/√2"],
+                    "correctOptionIndex": 0,
+                    "explanation": "In a right triangle with a 45-45-90 angle configuration, tan(45°) = 1."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 11,
+            "grade": 11,
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
+            "units": [
+              {
+                "id": 1,
+                "title": "Vectors",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the magnitude of the vector <3, 4>?",
+                    "options": ["5", "6", "7", "8"],
+                    "correctOptionIndex": 0,
+                    "explanation": "The magnitude of the vector <x, y> is given by √(x^2 + y^2)."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the dot product of the vectors <2, -3> and <4, 5>?",
+                    "options": ["23", "-7", "22", "-22"],
+                    "correctOptionIndex": 2,
+                    "explanation": "The dot product of two vectors <a, b> and <c, d> is given by ac + bd."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "Probability Distributions",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the mean of the binomial distribution with n = 10 and p = 0.3?",
+                    "options": ["3", "5", "7", "10"],
+                    "correctOptionIndex": 1,
+                    "explanation": "The mean of a binomial distribution is given by n * p."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the standard deviation of the normal distribution with mean 50 and standard deviation 10?",
+                    "options": ["5", "10", "15", "20"],
+                    "correctOptionIndex": 1,
+                    "explanation": "The standard deviation of a normal distribution measures the dispersion of data around the mean."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 12,
+            "grade": 12,
+            "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
+            "units": [
+              {
+                "id": 1,
+                "title": "Calculus",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the derivative of the function f(x) = x^3 - 3x^2 + 2x + 5?",
+                    "options": ["3x^2 - 6x + 2", "3x^2 - 6x - 2", "2x^2 - 6x + 2", "2x^2 - 6x - 2"],
+                    "correctOptionIndex": 0,
+                    "explanation": "To find the derivative, apply the power rule and sum rule."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the integral of the function f(x) = 2x + 3?",
+                    "options": ["x^2 + 3x + C", "x^2 + 3x", "x^2 + C", "2x^2 + 3x + C"],
+                    "correctOptionIndex": 1,
+                    "explanation": "To find the integral, apply the power rule for integration."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "Differential Equations",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the solution to the differential equation dy/dx = 2x?",
+                    "options": ["y = x^2", "y = x^2 + C", "y = 2x^2", "y = 2x^2 + C"],
+                    "correctOptionIndex": 1,
+                    "explanation": "To solve the differential equation, integrate both sides with respect to x."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the particular solution to the differential equation dy/dx = 3x, y(0) = 2?",
+                    "options": ["y = 2x^2", "y = 3x^2", "y = 3x^2 + 2", "y = 3x^2 - 2"],
+                    "correctOptionIndex": 2,
+                    "explanation": "The particular solution satisfies both the differential equation and the initial condition."
+                  }
+                ]
+              }
+            ]
+          }
+          
+          
+          
+          
+        ]
+      },
+      {
+        "id": 2,
+        "course": "Science",
+        "classes": [
+          {
+            "id": 1,
+            "grade": 1,
+            "image": "https://cdn-icons-png.flaticon.com/512/3039/3039848.png",
+            "units": [
+              {
+                "id": 1,
+                "title": "Living and Non-living Things",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "Which of the following is a living thing?",
+                    "options": [
+                      "Rock",
+                      "Car",
+                      "Plant",
+                      "Computer"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "Plants exhibit characteristics of living things such as growth, reproduction, and response to stimuli."
+                  },
+                  {
+                    "id": 2,
+                    "question": "Which of the following is a non-living thing?",
+                    "options": [
+                      "Dog",
+                      "Cloud",
+                      "Tree",
+                      "Fish"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "Clouds are composed of water vapor and do not exhibit characteristics of living things."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "Basic Concepts of Matter",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the smallest unit of matter?",
+                    "options": [
+                      "Atom",
+                      "Molecule",
+                      "Cell",
+                      "Element"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "An atom is the smallest unit of matter that retains the properties of an element."
+                  },
+                  {
+                    "id": 2,
+                    "question": "Which of the following is not a state of matter?",
+                    "options": [
+                      "Solid",
+                      "Gas",
+                      "Plasma",
+                      "Energy"
+                    ],
+                    "correctOptionIndex": 3,
+                    "explanation": "Energy is not a state of matter; it is a property or characteristic of matter and other substances."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "grade": 2,
+            "image": "https://cdn-icons-png.flaticon.com/512/3039/3039848.png",
+            "units": [
+              {
+                "id": 1,
+                "title": "Introduction to Energy",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "Which of the following is a renewable source of energy?",
+                    "options": [
+                      "Coal",
+                      "Natural Gas",
+                      "Solar",
+                      "Nuclear"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "Solar energy is a renewable source derived from the sun's radiation."
+                  },
+                  {
+                    "id": 2,
+                    "question": "Which form of energy is associated with motion?",
+                    "options": [
+                      "Heat",
+                      "Sound",
+                      "Kinetic",
+                      "Potential"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "Kinetic energy is the energy of motion."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "States of Matter",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "In which state of matter do particles have the least energy?",
+                    "options": [
+                      "Solid",
+                      "Liquid",
+                      "Gas",
+                      "Plasma"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "In the gas state, particles have the most kinetic energy and are the most spread out."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What happens to water at 100°C?",
+                    "options": [
+                      "It freezes",
+                      "It boils",
+                      "It condenses",
+                      "It evaporates"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "Water boils at 100°C, converting from liquid to gas phase."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "grade": 3,
+            "image": "https://cdn-icons-png.flaticon.com/512/3039/3039848.png",
+            "units": [
+              {
+                "id": 1,
+                "title": "Living Organisms and Their Environment",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "What is the role of producers in an ecosystem?",
+                    "options": [
+                      "Consume other organisms",
+                      "Decompose dead matter",
+                      "Absorb sunlight to make food",
+                      "Regulate climate"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "Producers, such as plants, use photosynthesis to convert sunlight into energy-rich molecules."
+                  },
+                  {
+                    "id": 2,
+                    "question": "Which of the following is a biotic factor in an ecosystem?",
+                    "options": [
+                      "Water",
+                      "Sunlight",
+                      "Temperature",
+                      "Grass"
+                    ],
+                    "correctOptionIndex": 3,
+                    "explanation": "Grass is a living organism and therefore a biotic factor in an ecosystem."
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "title": "Earth and Its Resources",
+                "mcqs": [
+                  {
+                    "id": 1,
+                    "question": "Which of the following is a renewable resource?",
+                    "options": [
+                      "Coal",
+                      "Oil",
+                      "Wind",
+                      "Natural Gas"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "Wind is a renewable resource because it is constantly replenished by natural processes."
+                  },
+                  {
+                    "id": 2,
+                    "question": "What is the main component of natural gas?",
+                    "options": [
+                      "Methane",
+                      "Propane",
+                      "Butane",
+                      "Ethane"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Methane is the primary component of natural gas, accounting for a significant portion of its composition."
+                  }
+                ]
+              }
+            ]
           }
         ]
-      }
-     
+      } 
     ]
     
       ,
@@ -430,14 +922,76 @@
             {
               "courseId": 1,
               "courseName": "Maths",
-              "unitsCompleted": [1, 2], 
-              "progress": 50
-            },
-            {
-              "courseId": 2,
-              "courseName": "Science",
-              "unitsCompleted": [3], 
-              "progress": 25 
+              "unitsCompleted": [], 
+              "progress": 0,
+              "classes": [
+                {
+                  "id": 1,
+                  "grade": 1,
+                  "image": "https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png",
+                  "units": [
+                    {
+                      "id": 1,
+                      "title": "Numbers from 1 to 9",
+                      "mcqs": [
+                        {
+                          "id": 1,
+                          "question": "What is 2 + 2?",
+                          "options": [
+                            "3",
+                            "4",
+                            "5",
+                            "6"
+                          ],
+                          "correctOptionIndex": 1,
+                          "explanation": "2 + 2 equals 4."
+                        },
+                        {
+                          "id": 2,
+                          "question": "How many sides does a triangle have?",
+                          "options": [
+                            "3",
+                            "4",
+                            "5",
+                            "6"
+                          ],
+                          "correctOptionIndex": 0,
+                          "explanation": "A triangle has 3 sides."
+                        }
+                      ]
+                    },
+                    {
+                      "id": 2,
+                      "title": "Addition and Subtraction",
+                      "mcqs": [
+                        {
+                          "id": 3,
+                          "question": "What is 5 - 3?",
+                          "options": [
+                            "1",
+                            "2",
+                            "3",
+                            "4"
+                          ],
+                          "correctOptionIndex": 1,
+                          "explanation": "5 - 3 equals 2."
+                        },
+                        {
+                          "id": 4,
+                          "question": "What is 7 + 4?",
+                          "options": [
+                            "9",
+                            "10",
+                            "11",
+                            "12"
+                          ],
+                          "correctOptionIndex": 2,
+                          "explanation": "7 + 4 equals 11."
+                        }
+                      ]
+                    }
+                  ]
+                }]
             }
           ]
         }]
