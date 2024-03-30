@@ -1,19 +1,16 @@
 
 import React from 'react';
-import { ChakraProvider } from '@chakra-ui/react';
 import {Navbar} from './components/Navbar';
-import { CoursesLandingPage } from './components/CoursesLandingPage'
 import { Footer } from './components/Footer'
-import { Header } from './components/Header'
+import { LandingPage } from './pages/LandingPage';
 
 const App: React.FC = () => {
   return (
-    <ChakraProvider>
+    <>
       <Navbar/> 
-      <Header/>
-      <CoursesLandingPage/>
+      <LandingPage/>
       <Footer/>
-    </ChakraProvider>
+    </>
   );
 };
 
