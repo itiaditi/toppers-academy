@@ -1,21 +1,55 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
-import React from 'react'
-
-import { RiInformationLine } from "react-icons/ri";
+import React from 'react';
+import { Box, Flex, Heading, Spacer, Text, Tooltip } from '@chakra-ui/react';
+import { RiInformationLine } from 'react-icons/ri';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCrown, faSquare, faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 
-const ProficientComponent = () => {
+const ProficientComponent: React.FC = () => {
   return (
-   <Flex>
-    <RiInformationLine />
-    <Box><FontAwesomeIcon icon={faCrown} style={{color: "#FFD43B",}} /></Box><Text>mastered</Text>
-    <Box><FontAwesomeIcon icon= {faStar} style={{color: "#B197FC",}} /></Box><Text>Proficient</Text>
-    <Box><FontAwesomeIcon icon={faStarHalfStroke} style={{color: "#f69337",}} /></Box><Text>Familiar</Text>
-    <Box><FontAwesomeIcon icon={faStar} style={{color:"red"}}/></Box><Text>Attempted</Text>
-    <Box><FontAwesomeIcon icon={faSquare} style={{color: "#ada8bd",}} /></Box><Text>Not Attempted</Text>
-   </Flex>
-  )
-}
+    <>
+    <Box>
+      <Heading>Class 1</Heading>
+    <Flex alignItems={'center'} p={2}> <Box><Text>4400 mastery points</Text></Box><Box ml={2}> <RiInformationLine/></Box></Flex>
+    </Box>
+    <Flex>
+      
+      <Box color={'black'}>
+        <Tooltip hasArrow label="Top" placement="top">
+         <Box> <FontAwesomeIcon icon={faCrown} style={{ color: '#FFD43B' }} />
+          Mastered</Box>
+        </Tooltip>
+        
+      </Box>
+      <Box color={'black'}>
+        <Tooltip hasArrow label="Top" placement="top">
+         <Box>
+        <FontAwesomeIcon icon={faStar} style={{ color: '#B197FC' }} />
+        Proficient</Box></Tooltip>
+      </Box>
+      <Box>
+      <Tooltip hasArrow label="Top" placement="top">
+        <Box>
+        <FontAwesomeIcon icon={faStarHalfStroke} style={{ color: '#f69337' }} />
+        Familiar
+        </Box></Tooltip>
+      </Box>
+      <Box>
+      <Tooltip hasArrow label="Top" placement="top">
+        <Box>
+        <FontAwesomeIcon icon={faStar} style={{ color: 'red' }} />
+        Attempted
+        </Box></Tooltip>
+      </Box>
+      <Box>
+      <Tooltip hasArrow label="Top" placement="top">
+        <Box>
+        <FontAwesomeIcon icon={faSquare} style={{ color: '#ada8bd' }} />
+        Not Attempted</Box>
+        </Tooltip>
+      </Box>
+    </Flex>
+    </>
+  );
+};
 
-export default ProficientComponent
+export default ProficientComponent;

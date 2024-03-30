@@ -9,7 +9,7 @@ const QuizDetail = () => {
     <Flex>
         <QuizTopic/>
         <AttemptQuiz/>
-        <McqComponent/>
+        
     </Flex>
   )
 }
