@@ -4,7 +4,7 @@ import { Box, HStack, Heading, Text } from "@chakra-ui/layout";
 
 const Header: React.FC = () => {
     return (
-        <HStack pr={"150px"} pl={"150px"}>
+        <HStack pr={"150px"} pl={"150px"} mt={50}>
             <Box>
                 <Image src="./src/assets/hero_student_collage_IN_1x.png" p="50px" w={700} />
             </Box>
