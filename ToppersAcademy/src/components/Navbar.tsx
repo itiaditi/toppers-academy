@@ -1,16 +1,34 @@
 import { ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
-import { Button, Center, Flex, Grid, HStack, Image, Input, InputGroup, InputRightElement, Link, Menu, MenuButton, MenuList} from "@chakra-ui/react";
+import { Button, Center, Flex, Grid, HStack, Image, Input, InputGroup, InputRightElement, Link, Menu, MenuButton, MenuList } from "@chakra-ui/react";
+import { useState } from "react";
+import { SearchComponent } from "../pages/SearchComponent";
+import { NavLink } from "react-router-dom";
+import { LandingPage } from "../pages/LandingPage";
+
 
 const Navbar: React.FC = () => {
+    const [searchTerm, setSearchTerm] = useState<string>('');
+    const [showSearchComponent, setShowSearchComponent] = useState<boolean>(false);
+
+    const handleSearch = () => {
+        setShowSearchComponent(true);
+    };
+
+    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
     return (
         <>
-            <Flex border="1px solid gray" pr="150px" pl="150px" gap={"100px"} color={"#1865f2"} pt={"10px"} pb={"10px"}>
-                <HStack gap={"30px"} flex="1">
+            <Flex borderBottom="1px solid gray" pr="150px" pl="150px" gap={"100px"} color={"#1865f2"} pt={"10px"} pb={"10px"} position="fixed" top={0} zIndex={999} backgroundColor="white">
+                <HStack gap={"50px"} flex="1">
                     <Menu>
                         <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                             Courses
                         </MenuButton>
-                        <MenuList w={"100vw"} pr={"200px"} pl={"200px"} pt={"30px"} ml={"-100px"} fontSize={"15px"}>
+                        <MenuList w={"100vw"} pr={"200px"} pl={"200px"} pt={"30px"} ml={"-100px"} pb={100} fontSize={"15px"}>
                             <Grid templateColumns="repeat(5, 1fr)" gap={4}>
                                 <Link color={"black"} fontSize={"13px"}>MATH (NCERT)</Link>
                                 <Link color={"black"} fontSize={"13px"}>MATH (MAHARASHTRA)</Link>
@@ -97,24 +115,28 @@ const Navbar: React.FC = () => {
                     </Menu>
 
                     <InputGroup w={"220px"}>
-                        <Input type="text" placeholder="Search..." variant="filled" />
+                        <Input type="text" placeholder="Search..." variant="filled" color="black" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onKeyPress={handleKeyPress} />
                         <InputRightElement
                             pointerEvents="none"
-                            children={<SearchIcon color="gray.300" />}
+                            children={<SearchIcon color="gray.800" />}
                         />
                     </InputGroup>
                 </HStack>
 
                 <Center>
-                    <Image src='.\src\assets\toppers-academy.png' alt='logo'  />
+                    <NavLink to="/">
+                        <Image src='.\src\assets\toppers-academy.png' alt='logo' />
+                    </NavLink>
                 </Center>
 
                 <HStack gap={"30px"} pl={"160px"}>
-                    <Link href="#" w={"75px"}>Donate <i className="fa-solid fa-arrow-up-right-from-square"></i></Link>
-                    <Link href="#">LogIn</Link>
-                    <Link href="#">SignUp</Link>
+                    <Link href="#" w={"75px"} fontWeight={500}>Donate <i className="fa-solid fa-arrow-up-right-from-square"></i></Link>
+                    <NavLink to="/login" >LogIn</NavLink>
+                    <NavLink to="/signup" >SignUp</NavLink>
                 </HStack>
             </Flex>
+            
+            {showSearchComponent ? <SearchComponent searchTerm={searchTerm}/> : <LandingPage />}
         </>
     );
 };
