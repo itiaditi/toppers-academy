@@ -5,8 +5,10 @@ import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-    <ChakraProvider>
-      <App />
-    </ChakraProvider>
+
+  <ChakraProvider>
+    <App />
+  </ChakraProvider>
+
   </BrowserRouter>
 )

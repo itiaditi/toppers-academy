@@ -19,7 +19,8 @@ import {
     Text,
     useColorModeValue,
   } from "@chakra-ui/react";
-  import { BasicUseage } from '../components/BasicUseage';
+import { BasicUseage } from '../component/components/BasicUseage';
+  
 const Card1 = () => {
   return (
     <div>

@@ -1,11 +1,12 @@
 import React from 'react'
 import Body from './Body'
-import Profile from '../pages/Profile'
 
-import Teachers from '../pages/Teachers'
+
+import Teachers from '../../pages/Teachers'
 import { Route, Routes } from 'react-router-dom'
-import Card1 from '../pages/Card1'
-import Progress from '../pages/Progress'
+import Card1 from '../../pages/Card1'
+import Progress from '../../pages/Progress'
+import Profile from '../../pages/Profile'
 
 const AllRoutes = () => {
   return (
