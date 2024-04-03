@@ -32,7 +32,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const signup = async (userData: User) => {
     try {
-      const response = await fetch('https://toppers-academy.onrender.com/users', {
+      const response = await fetch('https://localhost:4000/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

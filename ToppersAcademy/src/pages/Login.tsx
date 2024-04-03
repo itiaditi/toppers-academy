@@ -16,10 +16,10 @@ import {
     Checkbox,
 } from '@chakra-ui/react'
 import { useContext } from 'react';
-import { AuthContext } from './AuthContext';
+import { AuthContext } from '../components/AuthContext';
 import { useToast } from '@chakra-ui/react';
 
-export default function Login() {
+function Login() {
     const { login } = useContext(AuthContext);
     const toast = useToast();
     interface Credentials {
@@ -48,7 +48,7 @@ export default function Login() {
         }
       };
       
-    return (
+    return (<>
         <Box position={'relative'} p={0}>
             <Container
                 as={SimpleGrid}
@@ -135,5 +135,8 @@ export default function Login() {
                 </Stack>
             </Container>
         </Box>
+        </>
     )
 }
+
+export default Login;
