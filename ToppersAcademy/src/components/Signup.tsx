@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   Box,
   Flex,
@@ -12,6 +11,7 @@ import {
   FormControl,
   FormLabel,
   InputGroup,
+  HStack,
   InputRightElement,
   Link,
   useColorModeValue,
@@ -24,41 +24,31 @@ import {
   Select,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { useState } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
-import {useContext  } from "react";
+
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
+  const toast = useToast();
+
+  const { signup } = useContext(AuthContext);
   const [selectedRole, setSelectedRole] = useState('learner');
   const [dateOfBirth, setDateOfBirth] = useState<Date | null>(null);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-  });
-
-  const toast = useToast();
-  const { signup } = useContext(AuthContext);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const userData = {
-      dateOfBirth,
-      ...formData,
+      dateOfBirth: dateOfBirth,
+      email: e.currentTarget.email.value,
+      firstName: e.currentTarget.firstName.value,
+      lastName: e.currentTarget.lastName.value,
+      password: e.currentTarget.password.value,
       role: selectedRole,
-      userName: formData.firstName + formData.lastName + Number(String(Date.now()).slice(0, 3)),
+      userName: e.currentTarget.firstName.value + e.currentTarget.lastName.value + Number(String(Date.now()).slice(0, 3)),
     };
-
+    await signup(userData);
     try {
-      await signup(userData);
       // If signup is successful, show success toast
       toast({
         title: 'Account created.',
@@ -145,26 +135,26 @@ export default function Signup() {
                       <TabPanels>
                         <TabPanel>
                           <Stack spacing={4}>
-                            <Stack>
+                            <HStack>
                               <Box>
                                 <FormControl id="firstName" isRequired>
                                   <FormLabel>First Name</FormLabel>
-                                  <Input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} />
+                                  <Input type="text" />
                                 </FormControl>
                               </Box>
                               <Box>
                                 <FormControl id="lastName" isRequired>
                                   <FormLabel>Last Name</FormLabel>
-                                  <Input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} />
+                                  <Input type="text" />
                                 </FormControl>
                               </Box>
-                            </Stack>
-                            <FormControl id="email1" isRequired>
+                            </HStack>
+                            <FormControl id="email" isRequired>
                               <FormLabel>Email address</FormLabel>
-                              <Input type="email" name="email" value={formData.email} onChange={handleInputChange} autoComplete="email" />
+                              <Input type="email" />
                             </FormControl>
                             <Box>
-                              <FormLabel>Date Of Birth</FormLabel>
+                            <FormLabel>Date Of</FormLabel>
                               <Flex>
                                 <Select
                                   placeholder="Month"
@@ -212,10 +202,10 @@ export default function Signup() {
                                 </Select>
                               </Flex>
                             </Box>
-                            <FormControl id="password1" isRequired>
+                            <FormControl id="password" isRequired>
                               <FormLabel>Password</FormLabel>
                               <InputGroup>
-                                <Input type={showPassword ? 'text' : 'password'} name="password" value={formData.password} onChange={handleInputChange} autoComplete="current-password" />
+                                <Input type={showPassword ? 'text' : 'password'} />
                                 <InputRightElement h={'full'}>
                                   <Button
                                     variant={'ghost'}
