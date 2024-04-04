@@ -16,11 +16,12 @@ import {
     Checkbox,
 } from '@chakra-ui/react'
 import { useContext } from 'react';
-import { AuthContext } from './AuthContext';
+import { AuthContext } from '../components/AuthContext';
 import { useToast } from '@chakra-ui/react';
+import Body from '../component/Body'
 
 export default function Login() {
-    const { login } = useContext(AuthContext);
+    const { login , isAuth } = useContext(AuthContext);
     const toast = useToast();
     interface Credentials {
         email: string;
@@ -36,6 +37,13 @@ export default function Login() {
         try {
           // Call the login function with provided credentials
           await login({ email: loginEmail, password: loginPassword });
+          toast({
+            title: 'Login successful',
+            status: 'success',
+            duration: 5000,
+            isClosable: true,
+          });
+          
         } catch (error: any) {
           // Display an error toast if login fails
           toast({
@@ -47,6 +55,9 @@ export default function Login() {
           });
         }
       };
+      if (isAuth) {
+        return <Body />;
+      }
       
     return (
         <Box position={'relative'} p={0}>
@@ -100,11 +111,11 @@ export default function Login() {
                                         <Stack spacing={4}>
                                             <FormControl id="email">
                                                 <FormLabel>Email</FormLabel>
-                                                <Input type="email" />
+                                                <Input type="email" autoComplete="email" />
                                             </FormControl>
                                             <FormControl id="password">
                                                 <FormLabel>Password</FormLabel>
-                                                <Input type="password" />
+                                                <Input type="password" autoComplete="current-password"/>
                                             </FormControl>
                                             <Stack spacing={10}>
                                                 <Stack

@@ -1,16 +1,20 @@
 import { ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
-import { Button, Center, Flex, Grid, HStack, Image, Input, InputGroup, InputRightElement, Link, Menu, MenuButton, MenuList } from "@chakra-ui/react";
+import { Box, Button, Center, Flex, Grid, HStack, Image, Input, InputGroup, InputRightElement, Link, Menu, MenuButton, MenuList } from "@chakra-ui/react";
 import { useState } from "react";
 import { SearchComponent } from "../pages/SearchComponent";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { LandingPage } from "../pages/LandingPage";
+import { AllRoutes } from "./AllRotes";
 
 
 const Navbar: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [showSearchComponent, setShowSearchComponent] = useState<boolean>(false);
+    const navigate = useNavigate();
 
     const handleSearch = () => {
+        navigate('/search');
         setShowSearchComponent(true);
     };
 
@@ -125,18 +129,18 @@ const Navbar: React.FC = () => {
 
                 <Center>
                     <NavLink to="/">
-                        <Image src='.\src\assets\toppers-academy.png' alt='logo' />
+                       <Box> <Image src='.\src\assets\toppers-academy.png' alt='logo' /></Box>
                     </NavLink>
                 </Center>
 
                 <HStack gap={"30px"} pl={"160px"}>
                     <Link href="#" w={"75px"} fontWeight={500}>Donate <i className="fa-solid fa-arrow-up-right-from-square"></i></Link>
-                    <NavLink to="/login" >LogIn</NavLink>
+                    <NavLink to='/login' >LogIn</NavLink>
                     <NavLink to="/signup" >SignUp</NavLink>
+                   
                 </HStack>
             </Flex>
-            
-            {showSearchComponent ? <SearchComponent searchTerm={searchTerm}/> : <LandingPage />}
+
         </>
     );
 };

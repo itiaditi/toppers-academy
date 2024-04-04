@@ -3,21 +3,18 @@ import { SearchIcon } from "@chakra-ui/icons"
 
 interface SearchComponentProps {
     searchTerm: string;
+    onSearchTermChange: (term: string) => void;
 }
 
-const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm }) => {
+const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm, onSearchTermChange }) => {
     return (
         <>
             <Box mr={200} ml={200} mt={120} mb={100}>
-                <InputGroup>
-                    <InputLeftElement
-                        pointerEvents="none"
-                        children={<SearchIcon color="gray.800" />}
-                    />
-                    <Input type="text" value={searchTerm} onChange={() => { }} variant="filled" color="black" />
-                    <Button colorScheme="messenger" variant="solid" fontSize={16} p={5} w={180} ml={1}>Search</Button>
+            <InputGroup>
+                    <InputLeftElement pointerEvents="none" children={<SearchIcon color="gray.800" />} />
+                    <Input type="text" value={searchTerm} onChange={(e) => onSearchTermChange(e.target.value)} variant="filled" color="black" />
+                    <Button colorScheme="messenger" variant="solid" fontSize={16} p={5} w={180} ml={1} onClick={() => console.log("Search button clicked")}>Search</Button>
                 </InputGroup>
-
                 <HStack mt={50}>
                     <VStack alignItems="start" borderRight="1px solid gray" pr={5}>
                         <Text fontSize={20} fontWeight={500}>Refine your search</Text>
