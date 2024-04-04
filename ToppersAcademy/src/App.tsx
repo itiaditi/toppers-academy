@@ -13,11 +13,13 @@ const App: React.FC = () => {
   return (
     <>
 
+
       <AuthProvider>
         <Navbar />
         <AllRoutes />
         <Footer />
       </AuthProvider>
+
     </>
 
 
