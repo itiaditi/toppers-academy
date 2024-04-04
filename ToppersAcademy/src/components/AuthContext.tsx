@@ -17,25 +17,37 @@ interface LearningProfile{
 
 interface AuthContextType {
   user: User | null;
-  isAuth: boolean; // Added isAuth property
+  isAuth: boolean; 
+  setIsAuth:(isAuth:boolean)=>void;
   signup: (userData: any) => Promise<void>;
-  login: (credentials: any) => Promise<void>; // Keep the return type as Promise<void>
+  login: (credentials: any) => Promise<void>;
+  setClassData: ( courseClasses: CourseClass[] ) => void;
+  ClassData:CourseClass[];
 }
 
 export const AuthContext = createContext<AuthContextType>({
   user: null,
-  isAuth: true, // Default value for isAuth
+  isAuth: true,
+  setIsAuth:()=>{},
   signup: async () => {},
   login: async () => {},
+  setClassData: () => {}, 
+  ClassData:[],
 });
 
 interface AuthProviderProps {
   children: ReactNode;
 }
+interface CourseClass {
+  [x: string]: any;
+  grade: number;
+  titles: string[];
+}
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isAuth, setIsAuth] = useState<boolean>(false);
+  const [ClassData,setClassData]=useState<CourseClass[]>([]);
   const toast = useToast();
   
 
@@ -48,7 +60,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         },
         body: JSON.stringify({
           ...userData,
-          password: userData.password, // Send the password as a plain string
+          password: userData.password, 
         }),
       });
   
@@ -57,7 +69,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         console.log("signup", data);
         setUser(data);
   
-        // Store user data in local storage
         localStorage.setItem('user', JSON.stringify(data.user));
   
         // Create learning profile object
@@ -76,8 +87,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           body: JSON.stringify(learningProfile),
         });
         console.log(learningProfileResponse);
-        // If you want to store the token as well, assuming it's provided in the response
-        // localStorage.setItem('token', data.token);
+        
       } else {
         throw new Error('Signup failed');
       }
@@ -95,7 +105,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             const parsedUser: User = JSON.parse(storedUser);
             if (parsedUser.email === credentials.email) {
                 setUser(parsedUser);
-                setIsAuth(true); // Update isAuth to true upon successful login
+                setIsAuth(true); 
                 console.log(isAuth);
                 return;
             } else {
@@ -115,29 +125,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   
 
   
-  // const login = async (credentials: { email: string; password: string }): Promise<void> => {
-  //   try {
-  //     const response = await fetch('https://api.example.com/login', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(credentials),
-  //     });
-  
-  //     if (response.ok) {
-  //       const data = await response.json();
-  //       setUser(data);
-  //     } else {
-  //       throw new Error('Login failed');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //   }
-  // };
-  
   return (
-    <AuthContext.Provider value={{ user, isAuth,signup, login, }}>
+    <AuthContext.Provider value={{ user, isAuth,setIsAuth,signup, login, setClassData,ClassData}}>
       {children}
     </AuthContext.Provider>
   );

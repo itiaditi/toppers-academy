@@ -56,7 +56,8 @@ export function BasicUseage() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [selectedGrades, setSelectedGrades] = useState<number[]>([]);
   const [subject, setSubject] = useState("Maths");
-
+  const [classes,setClasses] = useState<Class[]>([]);
+const [units,setUnits] = useState<Unit[]>([]);
   useEffect(() => {
     fetchCourses();
   }, []);
@@ -79,16 +80,18 @@ export function BasicUseage() {
 
           return currClass.grade === grade;
         });
-          console.log(data);
+          console.log("helo",data);
+          
         return data;
       });
-
+      setClasses(filteredCourseClasses);
       console.log(filteredCourseClasses);
+      
+  const [unit]=classes.map(el=>el.units);
+  setUnits(unit);
     }
   }, [selectedGrades]);
-
-  // console.log(courses);
-
+console.log(units.map((el)=>el.title));
   const fetchCourses = () => {
     fetch(`https://toppers-academy.onrender.com/courses`)
       .then((response) => response.json())

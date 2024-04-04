@@ -24,18 +24,20 @@ import {
   Select,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { isMotionValue } from 'framer-motion';
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const toast = useToast();
 
-  const { signup } = useContext(AuthContext);
+  const { signup,isAuth } = useContext(AuthContext);
   const [selectedRole, setSelectedRole] = useState('learner');
   const [dateOfBirth, setDateOfBirth] = useState<Date | null>(null);
-
+const navigate=useNavigate();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const userData = {
@@ -52,11 +54,12 @@ export default function Signup() {
       // If signup is successful, show success toast
       toast({
         title: 'Account created.',
-        description: "We've created your account for you.",
+        description: "We've created your account ,Please Login.",
         status: 'success',
         duration: 5000,
         isClosable: true,
       });
+      navigate("/login")
     } catch (error) {
       // If there's an error during signup, show error toast
       toast({
@@ -70,12 +73,14 @@ export default function Signup() {
     }
   };
 
+ 
+
   const months = Array.from({ length: 12 }, (_, i) => i + 1);
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const years = Array.from({ length: 100 }, (_, i) => 2023 - i);
 
   return (
-    <Box position={'relative'} p={0}>
+    <Box mt={20} position={'relative'} p={0}>
       <Container
         as={SimpleGrid}
         maxW={'7xl'}
@@ -99,13 +104,13 @@ export default function Signup() {
             Log in to Toppers Academy to get started{' '}
           </Heading>
         </Stack>
-        <Stack
+        <Stack 
           bg={'gray.50'}
           rounded={'xl'}
           p={{ base: 1, sm: 6, md: 8 }}
           spacing={{ base: 8 }}
-          maxW={{ lg: 'lg' }}>
-          <Box as={'form'} mt={10} onSubmit={handleSubmit}>
+          >
+          <Box as={'form'} mt={0} onSubmit={handleSubmit}>
             <Stack spacing={4}>
               <Flex
                 minH={'100vh'}
@@ -121,10 +126,10 @@ export default function Signup() {
                       to join Toppers Academy
                     </Text>
                   </Stack>
-                  <Box
+                  <Box w={'30rem'}
                     rounded={'lg'}
                     bg={useColorModeValue('white', 'gray.700')}
-                    boxShadow={'lg'}
+                    boxShadow={'md'}
                     p={8}>
                     <Tabs variant='unstyled' onChange={(index) => setSelectedRole(index === 0 ? 'learner' : index === 1 ? 'teacher' : 'parent')}>
                       <TabList>
@@ -154,7 +159,7 @@ export default function Signup() {
                               <Input type="email" />
                             </FormControl>
                             <Box>
-                            <FormLabel>Date Of</FormLabel>
+                            <FormLabel>Date Of Birth</FormLabel>
                               <Flex>
                                 <Select
                                   placeholder="Month"
