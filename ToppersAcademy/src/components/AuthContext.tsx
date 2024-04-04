@@ -58,7 +58,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(data);
   
         // Store user data in local storage
-        localStorage.setItem('user', JSON.stringify(data));
+        localStorage.setItem('user', JSON.stringify(data.user));
   
         // Create learning profile object
         const learningProfile: LearningProfile = {
@@ -75,7 +75,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           },
           body: JSON.stringify(learningProfile),
         });
-  
+        console.log(learningProfileResponse);
         // If you want to store the token as well, assuming it's provided in the response
         // localStorage.setItem('token', data.token);
       } else {
@@ -90,26 +90,27 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   
   const login = async (credentials: { email: string; password: string }): Promise<void> => {
     try {
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
-        const parsedUser: User = JSON.parse(storedUser);
-        if (parsedUser.email === credentials.email && parsedUser.password === credentials.password) {
-          setUser(parsedUser);
-          setIsAuth(true); // Update isAuth to true upon successful login
-          console.log(isAuth);
-          return;
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            const parsedUser: User = JSON.parse(storedUser);
+            if (parsedUser.email === credentials.email) {
+                setUser(parsedUser);
+                setIsAuth(true); // Update isAuth to true upon successful login
+                console.log(isAuth);
+                return;
+            } else {
+                throw new Error('Wrong email');
+                console.log(isAuth);
+            }
         } else {
-          throw new Error('Wrong credentials');
-          console.log(isAuth);
+            throw new Error('User not found');
         }
-      } else {
-        throw new Error('User not found');
-      }
     } catch (error) {
-      console.error('Error:', error);
-      throw error;
+        console.error('Error:', error);
+        throw error;
     }
-  };
+};
+
 
   
 
