@@ -19,7 +19,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../components/AuthContext';
 import { useToast } from '@chakra-ui/react';
 
-function Login() {
+export default function Login() {
     const { login } = useContext(AuthContext);
     const toast = useToast();
     interface Credentials {
@@ -36,6 +36,13 @@ function Login() {
         try {
           // Call the login function with provided credentials
           await login({ email: loginEmail, password: loginPassword });
+          toast({
+            title: 'Login successful',
+            status: 'success',
+            duration: 5000,
+            isClosable: true,
+          });
+          
         } catch (error: any) {
           // Display an error toast if login fails
           toast({
@@ -48,7 +55,8 @@ function Login() {
         }
       };
       
-    return (<>
+      
+    return (
         <Box position={'relative'} p={0}>
             <Container
                 as={SimpleGrid}
@@ -100,11 +108,11 @@ function Login() {
                                         <Stack spacing={4}>
                                             <FormControl id="email">
                                                 <FormLabel>Email</FormLabel>
-                                                <Input type="email" />
+                                                <Input type="email" autoComplete="email" />
                                             </FormControl>
                                             <FormControl id="password">
                                                 <FormLabel>Password</FormLabel>
-                                                <Input type="password" />
+                                                <Input type="password" autoComplete="current-password"/>
                                             </FormControl>
                                             <Stack spacing={10}>
                                                 <Stack
@@ -135,8 +143,5 @@ function Login() {
                 </Stack>
             </Container>
         </Box>
-        </>
     )
 }
-
-export default Login;
