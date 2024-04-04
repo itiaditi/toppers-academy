@@ -18,9 +18,10 @@ import {
 import { useContext } from 'react';
 import { AuthContext } from '../components/AuthContext';
 import { useToast } from '@chakra-ui/react';
+import Body from '../component/Body'
 
 export default function Login() {
-    const { login } = useContext(AuthContext);
+    const { login , isAuth } = useContext(AuthContext);
     const toast = useToast();
     interface Credentials {
         email: string;
@@ -54,7 +55,9 @@ export default function Login() {
           });
         }
       };
-      
+      if (isAuth) {
+        return <Body />;
+      }
       
     return (
         <Box position={'relative'} p={0}>

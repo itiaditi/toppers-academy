@@ -24,7 +24,7 @@ interface AuthContextType {
 
 export const AuthContext = createContext<AuthContextType>({
   user: null,
-  isAuth: false, // Default value for isAuth
+  isAuth: true, // Default value for isAuth
   signup: async () => {},
   login: async () => {},
 });
