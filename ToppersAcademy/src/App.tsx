@@ -7,19 +7,20 @@ import { Header } from './components/Header'
 import Body from './component/components/Body';
 import Navbar from './component/components/Navbar';
 
-import { Navbar } from './components/Navbar';
-import { Footer } from './components/Footer';
+//import { Navbar } from './components/Navbar';
+//import { Footer } from './components/Footer';
 
 
 const App: React.FC = () => {
   return (
     <>
 
-      <Navbar/> 
+      {/* <Navbar/> 
       <Header/>
       <CoursesLandingPage/>
-      <Footer/> */}
+      <Footer/>  */}
          <Navbar/>
+         <Body/>
 
     </>
   );

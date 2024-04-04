@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Checkbox,
   Divider,
   Grid,
   GridItem,
@@ -18,9 +19,145 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Body from "./Body";
+import { useEffect, useState } from "react";
+import { Continue } from "./Continue";
+import { NavLink } from "react-router-dom";
+import axios from "axios";
 
-export const BasicUseage :React.FC=()=> {
+interface Course {
+  id: number;
+  course: string;
+  image: string;
+  classes: Class[];
+}
+
+interface Class {
+  id: number;
+  grade: number;
+  units: Unit[];
+}
+
+interface Unit {
+  id: number;
+  title: string;
+  mcqs: MCQ[];
+}
+
+interface MCQ {
+  id: number;
+  question: string;
+  options: string[];
+  correctOptionIndex: number;
+  explanation: string;
+}
+interface Course2 {
+  courseId: number;
+  courseName: string;
+  unitsCompleted: number[]; // Array of numbers representing completed units
+  progress: number;
+  classes: Class[]; // Array of Class objects
+}
+export function BasicUseage() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [selectedGrades, setSelectedGrades] = useState<number[]>([]);
+  const [subject, setSubject] = useState("Maths");
+
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
+  // selectedGrades.map((item) => {
+  //   console.log("mapping");
+  // });
+  const [filteredCourseClasses, setFilteredCourseClasses] = useState<Class[]>(
+    []
+  );
+  useEffect(() => {
+    if (courses.length > 0) {
+      const [filteredCourse] = courses.filter(
+        (course) => course.course === subject
+      );
+      console.log(filteredCourse);
+
+      const courseClasses = selectedGrades.map((grade) => {
+        const [data] = filteredCourse.classes.filter((currClass) => {
+          // console.log(currClass.grade);
+          // console.log(grade);
+
+          return currClass.grade === grade;
+        });
+        console.log(data);
+        console.log(typeof data);
+        return data;
+      });
+
+      setFilteredCourseClasses(courseClasses);
+
+      console.log(filteredCourseClasses);
+    }
+  }, [selectedGrades]);
+
+  // console.log(courses);
+
+  const fetchCourses = () => {
+    fetch(`https://toppers-academy.onrender.com/courses`)
+      .then((response) => response.json())
+      .then((data) => setCourses(data))
+      .catch((error) => console.error("Error fetching courses:", error));
+  };
+
+  const handleGradeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const grade = parseInt(event.target.value);
+
+    if (event.target.checked) {
+      setSelectedGrades([...selectedGrades, grade]);
+      // console.log(selectedGrades);
+    } else {
+      setSelectedGrades(selectedGrades.filter((g) => g !== grade));
+    }
+  };
+
+  // console.log(selectedGrades);
+
+  const filteredCourses = courses.filter((course) =>
+    selectedGrades.includes(course.id)
+  );
+
+  const handleSubmit = async () => {
+    const userData2: Course2 = {
+      courseId: 1,
+      courseName: "Maths",
+      unitsCompleted: [],
+      progress: 0,
+      classes: filteredCourseClasses,
+    };
+
+    console.log(userData2);
+
+    try {
+      const response = await fetch(
+        `https://toppers-academy.onrender.com/learningProfiles/2`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+          body: JSON.stringify({
+            courses: [userData2],
+          }),
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <>
       <Button onClick={onOpen} color="white" bg="blue">
@@ -57,42 +194,114 @@ export const BasicUseage :React.FC=()=> {
                   <Divider borderColor="black" borderWidth="1px" />
                   <RadioGroup defaultValue="2">
                     <Stack spacing={3} direction="column">
-                      <Radio colorScheme="blue" value="1">
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="1"
+                        isChecked={selectedGrades.includes(1)}
+                        onChange={handleGradeChange}
+                      >
                         Class 1
-                      </Radio>
-                      <Radio colorScheme="blue" value="2">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="2"
+                        isChecked={selectedGrades.includes(2)}
+                        onChange={handleGradeChange}
+                      >
                         Class 2
-                      </Radio>
-                      <Radio colorScheme="blue" value="3">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="3"
+                        isChecked={selectedGrades.includes(3)}
+                        onChange={handleGradeChange}
+                      >
                         Class 3
-                      </Radio>
-                      <Radio colorScheme="blue" value="4">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="4"
+                        isChecked={selectedGrades.includes(4)}
+                        onChange={handleGradeChange}
+                      >
                         Class 4
-                      </Radio>
-                      <Radio colorScheme="blue" value="5">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="5"
+                        isChecked={selectedGrades.includes(5)}
+                        onChange={handleGradeChange}
+                      >
                         Class 5
-                      </Radio>
-                      <Radio colorScheme="blue" value="6">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="6"
+                        isChecked={selectedGrades.includes(6)}
+                        onChange={handleGradeChange}
+                      >
                         Class 6
-                      </Radio>
-                      <Radio colorScheme="blue" value="7">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="7"
+                        isChecked={selectedGrades.includes(7)}
+                        onChange={handleGradeChange}
+                      >
                         Class 7
-                      </Radio>
-                      <Radio colorScheme="blue" value="8">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="8"
+                        isChecked={selectedGrades.includes(8)}
+                        onChange={handleGradeChange}
+                      >
                         Class 8
-                      </Radio>
-                      <Radio colorScheme="blue" value="9">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="9"
+                        isChecked={selectedGrades.includes(9)}
+                        onChange={handleGradeChange}
+                      >
                         Class 9
-                      </Radio>
-                      <Radio colorScheme="blue" value="10">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="10"
+                        isChecked={selectedGrades.includes(10)}
+                        onChange={handleGradeChange}
+                      >
                         Class 10
-                      </Radio>
-                      <Radio colorScheme="blue" value="11">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="11"
+                        isChecked={selectedGrades.includes(11)}
+                        onChange={handleGradeChange}
+                      >
                         Class 11
-                      </Radio>
-                      <Radio colorScheme="blue" value="12">
+                      </Checkbox>
+                      <Checkbox
+                        colorScheme="blue"
+                        name="grade"
+                        value="12"
+                        isChecked={selectedGrades.includes(12)}
+                        onChange={handleGradeChange}
+                      >
                         Class 12
-                      </Radio>
+                      </Checkbox>
                     </Stack>
                   </RadioGroup>
                 </GridItem>
@@ -130,7 +339,24 @@ export const BasicUseage :React.FC=()=> {
             </ModalBody>
           </Box>
           <ModalFooter>
-            <Button>Continue</Button>
+            {/* {showContinueModal && <Continue isOpen={showContinueModal} onClose={handleCloseContinueModal} />} */}
+            {/* <NavLink
+              to="/card"
+              onClick={() => {
+                setSelectedGrades(selectedGrades);
+                console.log(selectedGrades);
+              }}
+            > */}
+            <Button
+              onClick={() => {
+                handleSubmit();
+                onClose();
+              }}
+            >
+              Continue
+            </Button>
+
+            {/* </NavLink> */}
           </ModalFooter>
         </ModalContent>
       </Modal>

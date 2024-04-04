@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Box,
     Button,
@@ -19,23 +19,62 @@ import {
     Text,
     useColorModeValue,
   } from "@chakra-ui/react";
-import { BasicUseage } from '../component/components/BasicUseage';
   
+import axios from 'axios';
+import { BasicUseage } from '../component/components/BasicUseage';
+interface Course{
+  // courseId: 1, courseName: 'Maths', unitsCompleted: Array(0), progress: 0, classes: Array(2)
+  courseID:number,
+  courseName:string,
+  unitsCompleted:[],
+  progress:number,
+  classes:[]
+}
+interface User {
+  id:number,
+  userId:number,
+  userName:String,
+  courses:Course[]
+}
 const Card1 = () => {
+
+  const [total, setTotal] = useState<User[]>([]);
+
+async function fetchData() {
+  try {
+    const response = await axios.get('https://toppers-academy.onrender.com/learningProfiles/2');
+    console.log(response.data);
+    setTotal(response.data) // Do something with the response data
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+console.log(total);
+// Call the function to fetch data
+useEffect(()=>{
+  fetchData();
+},[])
+
+
   return (
     <div>
+      
       <SimpleGrid spacing={1} templateColumns="repeat(2, 1fr)" gap={20}>
-   
+     
       <Card width="350px">
           <Text fontSize="27px" paddingLeft={12} fontWeight="bold" paddingTop="30px">
             MY COURSES
           </Text>
           <br />
+          
+         <Box >
           <Flex justifyContent="space-around" paddingLeft={3}>
-            <Text>class 2</Text>
+            <Text >class {} </Text>
             <Link color="blue">seeall(4)</Link>
             <hr />
           </Flex>
+          </Box>
+        
           <br />
           <Flex justifyContent="space-evenly" alignItems="center">
             <Box>
