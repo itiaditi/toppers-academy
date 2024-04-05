@@ -19,7 +19,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import Body from "./Body";
+// import Body from "./Body";
 import { useContext, useEffect, useState } from "react";
 
 import { AuthContext } from "../components/AuthContext";
@@ -38,19 +38,19 @@ interface CourseClass {
 }
 
 
-interface Unit {
-  id: number;
-  title: string;
-  mcqs: MCQ[];
-}
+// interface Unit {
+//   id: number;
+//   title: string;
+//   mcqs: MCQ[];
+// }
 
-interface MCQ {
-  id: number;
-  question: string;
-  options: string[];
-  correctOptionIndex: number;
-  explanation: string;
-}
+// interface MCQ {
+//   id: number;
+//   question: string;
+//   options: string[];
+//   correctOptionIndex: number;
+//   explanation: string;
+// }
 interface Course2 {
   courseId: number;
   courseName: string;
@@ -63,8 +63,8 @@ export function BasicUseage() {
 
   const [courses, setCourses] = useState<Course[]>([]);
   const [selectedGrades, setSelectedGrades] = useState<number[]>([]);
-  const [subject, setSubject] = useState("Maths");
-  const {setClassData,ClassData} = useContext(AuthContext);
+  const [subject] = useState("Maths");
+  const {setClassData} = useContext(AuthContext);
 
   useEffect(() => {
     const fetchCourses = () => {
@@ -126,9 +126,9 @@ export function BasicUseage() {
 
   // console.log(selectedGrades);
 
-  const filteredCourses = courses.filter((course) =>
-    selectedGrades.includes(course.id)
-  );
+  // const filteredCourses = courses.filter((course) =>
+  //   selectedGrades.includes(course.id)
+  // );
 
   const handleSubmit = async () => {
     const userData2: Course2 = {

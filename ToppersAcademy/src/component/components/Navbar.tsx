@@ -3,28 +3,23 @@
 import {
   Box,
   Flex,
-  Avatar,
-  Text,
-  Button,
+ 
   Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
+  
+  // useDisclosure,
   useColorModeValue,
   Stack,
-  useColorMode,
-  Center,
+  // useColorMode,
+  // Center,
   Image,
   Link,
 } from "@chakra-ui/react";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+// import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { EditProfile } from "./EditProfile";
 
 export default function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { colorMode, toggleColorMode } = useColorMode();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
     

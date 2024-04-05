@@ -1,5 +1,3 @@
-import React from 'react'
-import Body from './Body'
 
 
 import Teachers from '../../pages/Teachers'
