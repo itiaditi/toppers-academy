@@ -42,8 +42,8 @@ const Footer: React.FC = () => {
                         <Link></Link>
                         <Link></Link>
                         <Link>Download your apps</Link>
-                        <Image src=".\src\assets\us.png" w="145px" ml="-15px"></Image>
-                        <Image src=".\src\assets\en.png" w="100px" mt="-5px" />
+                        <Image h={"2rem"}src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?releaseDate=1331424000" w="145px" ml="-15px"></Image>
+                        <Image src="https://cdn.kastatic.org/images/store-badges/google-play/en.png" w="100px" mt="-5px" />
                     </VStack>
                     <VStack flexDirection="column" alignItems="start" fontSize="12px" fontWeight="500" gap="12px">
                         <Text color="#7185AA">Courses</Text>
@@ -63,10 +63,10 @@ const Footer: React.FC = () => {
                         </HStack>
                         <HStack>
                             <Text as="span" color="#7185AA">country</Text>
-                            <Image src=".\src\assets\us-flag.png" w="15px" /><Text>U.S.</Text>
-                            <Image src=".\src\assets\india-flag.png" w="15px" /><Text>India</Text>
-                            <Image src=".\src\assets\mexico-flag.png" w="15px" /><Text>Mexico</Text>
-                            <Image src=".\src\assets\brazil-flag.png" w="15px" /><Text>Brazil</Text>
+                            <Image src="https://cdn.kastatic.org/images/country-flag-icons/us-flag.png" w="15px" /><Text>U.S.</Text>
+                            <Image src="https://cdn.kastatic.org/images/country-flag-icons/india-flag.png" w="15px" /><Text>India</Text>
+                            <Image src="https://cdn.kastatic.org/images/country-flag-icons/mexico-flag.png" w="15px" /><Text>Mexico</Text>
+                            <Image src="https://cdn.kastatic.org/images/country-flag-icons/brazil-flag.png" w="15px" /><Text>Brazil</Text>
                         </HStack>
                         <HStack mt="30px">
                             <Text color="#7185AA">© 2024 Toppers Academy</Text>

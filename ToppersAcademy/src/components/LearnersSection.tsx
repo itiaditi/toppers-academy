@@ -17,7 +17,7 @@ const LearnersSection: React.FC = () => {
             </Box>
 
             <Box w="55%">
-                <Image src="./src/assets/laptop_collage.png" p="50px" mt={-40} />
+                <Image src="https://cdn.kastatic.org/images/lohp/laptop_collage@2x.png" p="50px" mt={-40} />
             </Box>
         </HStack>
     );

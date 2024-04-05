@@ -11,28 +11,28 @@ const KeySupporters: React.FC = () => {
                     <Grid templateColumns='repeat(4, 1fr)' gap={12} mb={100} alignItems="center" justifyContent="center">
 
                         <GridItem>
-                            <Image src=".\src\assets\bank-of-america-dark-gray@2x.png" />
+                            <Image src="https://cdn.kastatic.org/images/supporters-logos/bank-of-america-dark-gray@2x.png" />
                         </GridItem>
                         <GridItem w={180}>
-                            <Image src=".\src\assets\college-board-dark-gray@2x.png" />
+                            <Image src="https://cdn.kastatic.org/images/supporters-logos/college-board-dark-gray@2x.png" />
                         </GridItem>
                         <GridItem>
-                            <Image src=".\src\assets\ann-and-john-doerr-dark-gray@2x.png"/>
+                            <Image src="https://cdn.kastatic.org/images/supporters-logos/ann-and-john-doerr-dark-gray@2x.png"/>
                         </GridItem>
                         <GridItem>
-                            <Image src=".\src\assets\gates-foundation-dark-gray@2x.png" />
+                            <Image src="https://cdn.kastatic.org/images/supporters-logos/gates-foundation-dark-gray@2x.png" />
                         </GridItem>
                         <GridItem w={150}>
-                            <Image src=".\src\assets\lemann-foundation-dark-gray@2x.png" />
+                            <Image src="https://cdn.kastatic.org/images/supporters-logos/lemann-foundation-dark-gray@2x.png" />
                         </GridItem>
                         <GridItem>
-                            <Image src=".\src\assets\carlos-rodriguez-pastor-dark-gray@2x.png" />
+                            <Image src="https://cdn.kastatic.org/images/supporters-logos/carlos-rodriguez-pastor-dark-gray@2x.png" />
                         </GridItem>
                         <GridItem w={180}>
-                            <Image src=".\src\assets\tata-trusts-dark-gray@2x.png" />
+                            <Image src="https://cdn.kastatic.org/images/supporters-logos/tata-trusts-dark-gray@2x.png" />
                         </GridItem>
                         <GridItem w={150}>
-                            <Image src=".\src\assets\valhalla-dark-gray@2x.png" />
+                            <Image src="https://cdn.kastatic.org/images/supporters-logos/valhalla-dark-gray@2x.png" />
                         </GridItem>
                     </Grid>
                 </VStack>

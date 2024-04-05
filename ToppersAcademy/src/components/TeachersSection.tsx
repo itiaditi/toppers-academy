@@ -6,7 +6,7 @@ const TeachersSection: React.FC = () => {
     return (
         <HStack pr={"150px"} pl={"150px"} pt={50} pb={50} alignItems="start">
             <Box w="60%">
-                <Image src="./src/assets/faces_collage.png" p="50px" mt={-10} ml={-50}/>
+                <Image src="https://cdn.kastatic.org/images/lohp/faces_collage_2@2x.png" p="50px" mt={-10} ml={-50}/>
             </Box>
             <Box w="40%" ml={-50}>
                 <Text fontSize={14} letterSpacing={1} mb={5} ml={4} color="#989a9d" fontWeight={450}>TEACHERS</Text>

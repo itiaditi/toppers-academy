@@ -11,7 +11,7 @@ const CoursesLandingPage: React.FC = () => {
                         <AccordionItem>
                             <h2>
                                 <AccordionButton fontSize={20} fontWeight={600}>
-                                    <Image src=".\src\assets\math.png" w={45} mr={2} borderRadius='full' />
+                                    <Image src="https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png" w={45} mr={2} borderRadius='full' />
                                     <Box as="span" flex='1' textAlign='left' >
                                         Math (NCERT)
                                     </Box>
@@ -46,7 +46,7 @@ const CoursesLandingPage: React.FC = () => {
                         <AccordionItem>
                             <h2>
                                 <AccordionButton fontSize={20} fontWeight={600}>
-                                    <Image src=".\src\assets\math.png" w={45} mr={2} borderRadius='full' />
+                                    <Image src="https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png" w={45} mr={2} borderRadius='full' />
                                     <Box as="span" flex='1' textAlign='left' >
                                         Math Foundations
                                     </Box>
@@ -73,7 +73,7 @@ const CoursesLandingPage: React.FC = () => {
                         <AccordionItem>
                             <h2>
                                 <AccordionButton fontSize={20} fontWeight={600}>
-                                    <Image src=".\src\assets\math.png" w={45} mr={2} borderRadius='full' />
+                                    <Image src="https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png" w={45} mr={2} borderRadius='full' />
                                     <Box as="span" flex='1' textAlign='left' >
                                         Math Maharashtra
                                     </Box>
@@ -105,7 +105,7 @@ const CoursesLandingPage: React.FC = () => {
                         <AccordionItem>
                             <h2>
                                 <AccordionButton fontSize={20} fontWeight={600}>
-                                    <Image src=".\src\assets\science_green.png" w={45} mr={2} borderRadius='full' />
+                                    <Image src="https://cdn.kastatic.org/genfiles/topic-icons/icons/science_green.png-4ca7bf-128c.png" w={45} mr={2} borderRadius='full' />
                                     <Box as="span" flex='1' textAlign='left' >
                                         PACE (SOE Punjab)
                                     </Box>
@@ -132,7 +132,7 @@ const CoursesLandingPage: React.FC = () => {
                         <AccordionItem>
                             <h2>
                                 <AccordionButton fontSize={20} fontWeight={600}>
-                                    <Image src=".\src\assets\science_green.png" w={45} mr={2} borderRadius='full' />
+                                    <Image src="https://cdn.kastatic.org/genfiles/topic-icons/icons/science_green.png-4ca7bf-128c.png" w={45} mr={2} borderRadius='full' />
                                     <Box as="span" flex='1' textAlign='left' >
                                         Science (NCERT)
                                     </Box>
@@ -167,7 +167,7 @@ const CoursesLandingPage: React.FC = () => {
                         <AccordionItem>
                             <h2>
                                 <AccordionButton fontSize={20} fontWeight={600}>
-                                    <Image src=".\src\assets\math.png" w={45} mr={2} borderRadius='full' />
+                                    <Image src="https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png" w={45} mr={2} borderRadius='full' />
                                     <Box as="span" flex='1' textAlign='left' >
                                         All State boards
                                     </Box>
@@ -195,7 +195,7 @@ const CoursesLandingPage: React.FC = () => {
                         <AccordionItem>
                             <h2>
                                 <AccordionButton fontSize={20} fontWeight={600}>
-                                    <Image src=".\src\assets\life_skills.png" w={45} mr={2} borderRadius='full' />
+                                    <Image src="https://cdn.kastatic.org/genfiles/topic-icons/icons/life_skills.png-1a4785-128c.png" w={45} mr={2} borderRadius='full' />
                                     <Box as="span" flex='1' textAlign='left' >
                                         Explore more
                                     </Box>

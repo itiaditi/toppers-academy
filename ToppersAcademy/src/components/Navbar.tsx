@@ -7,7 +7,7 @@ import { NavLink, useNavigate} from "react-router-dom";
 // import { LandingPage } from "../pages/LandingPage";
 // import { AllRoutes } from "./AllRotes";
 import { AuthContext } from "./AuthContext";
-
+import logo from "../assets/toppers-academy.png"
 
 const Navbar: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState<string>('');
@@ -135,7 +135,7 @@ console.log(showSearchComponent);
 
                 <Center>
                     <NavLink to="/">
-                       <Box w="150px"> <Image src='.\src\assets\toppers-academy.png' alt='logo' /></Box>
+                       <Box w="150px"> <Image src={logo} alt='logo' /></Box>
                     </NavLink>
                 </Center>
 
