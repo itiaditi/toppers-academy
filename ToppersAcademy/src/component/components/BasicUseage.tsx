@@ -18,10 +18,10 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import Body from "./Body";
+// import Body from "./Body";
 import { useEffect, useState } from "react";
-import { Continue } from "./Continue";
-import { NavLink } from "react-router-dom";
+// import { Continue } from "./Continue";
+// import { NavLink } from "react-router-dom";
 
 interface Course {
   id: number;
@@ -55,7 +55,7 @@ export function BasicUseage() {
 
   const [courses, setCourses] = useState<Course[]>([]);
   const [selectedGrades, setSelectedGrades] = useState<number[]>([]);
-  const [subject, setSubject] = useState("Maths");
+  const [subject] = useState("Maths");
   const [classes,setClasses] = useState<Class[]>([]);
 const [units,setUnits] = useState<Unit[]>([]);
   useEffect(() => {
@@ -112,9 +112,9 @@ console.log(units.map((el)=>el.title));
 
   // console.log(selectedGrades);
 
-  const filteredCourses = courses.filter((course) =>
-    selectedGrades.includes(course.id)
-  );
+  // const filteredCourses = courses.filter((course) =>
+  //   selectedGrades.includes(course.id)
+  // );
 
   return (
     <>

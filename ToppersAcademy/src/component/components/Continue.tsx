@@ -3,8 +3,8 @@ import {
   Button,
   Checkbox,
   Divider,
-  Grid,
-  GridItem,
+  // Grid,
+  // GridItem,
   Link,
   Modal,
   ModalBody,
@@ -13,13 +13,13 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Radio,
-  RadioGroup,
+  // Radio,
+  // RadioGroup,
   Stack,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import Body from "./Body";
+// import Body from "./Body";
 
 interface ContinueProps {
   isOpen: boolean;
