@@ -20,10 +20,10 @@ toppers-academy/
 ```
 
 ## Video Walkthrough of the project
-
+https://youtu.be/1ChCSXNOMKM
 
 ## Video Walkthrough of the codebase
-[Add link to codebase walkthrough]
+https://youtu.be/pnB5KxIsseE
 
 ## Features
 - Video tutorials on various subjects
