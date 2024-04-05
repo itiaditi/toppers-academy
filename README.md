@@ -36,6 +36,25 @@ https://youtu.be/pnB5KxIsseE
 - The platform aims to replicate the functionality and user experience of Khan Academy.
 - User engagement and progress tracking are prioritized for personalized learning experiences.
 
+## ScreenShots
+### Landing
+- ![image](https://github.com/itiaditi/toppers-academy/assets/154405714/37972236-de0e-4751-baca-e31f65905558)
+- ![image](https://github.com/itiaditi/toppers-academy/assets/154405714/57f2ae09-63cb-42ca-ae84-4ddf93d75706)
+- ![image](https://github.com/itiaditi/toppers-academy/assets/154405714/13550f7e-bde0-4b8d-87e2-977b0d8241c5)
+
+### Login and Sign up
+![image](https://github.com/itiaditi/toppers-academy/assets/154405714/97c7a8e6-78a5-4c37-84ad-4d4050e5efa5)
+![image](https://github.com/itiaditi/toppers-academy/assets/154405714/7d4b007f-9e61-4691-a5ff-caf886a3efcb)
+
+### DashBoard
+![image](https://github.com/itiaditi/toppers-academy/assets/154405714/dc48fc84-39af-440c-881c-cad81e186458)
+![image](https://github.com/itiaditi/toppers-academy/assets/154405714/9e23c912-b143-46a1-8b84-bcb15ce94a57)
+![image](https://github.com/itiaditi/toppers-academy/assets/154405714/8fb32232-1700-455f-b06f-8b124356a40c)
+
+
+
+
+
 ## Installation & Getting Started
 1. Clone the repository:
 ```bash
