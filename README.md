@@ -20,7 +20,7 @@ toppers-academy/
 ```
 
 ## Video Walkthrough of the project
-[Add link to video walkthrough]
+
 
 ## Video Walkthrough of the codebase
 [Add link to codebase walkthrough]
