@@ -24,17 +24,17 @@ import {
   Select,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { isMotionValue } from 'framer-motion';
+// import { isMotionValue } from 'framer-motion';
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const toast = useToast();
 
-  const { signup,isAuth } = useContext(AuthContext);
+  const { signup } = useContext(AuthContext);
   const [selectedRole, setSelectedRole] = useState('learner');
   const [dateOfBirth, setDateOfBirth] = useState<Date | null>(null);
 const navigate=useNavigate();

@@ -1,6 +1,6 @@
 import { Box, Divider, Flex, Link, Select, SimpleGrid, Text } from "@chakra-ui/react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { RouteNavbar } from "../component/RouteNavbar";
 
  

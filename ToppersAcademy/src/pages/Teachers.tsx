@@ -3,15 +3,15 @@ import {
     Button,
     Divider,
     Flex,
-    Grid,
-    Input,
-    Link,
-    Select,
-    SimpleGrid,
-    Stack,
+    // Grid,
+    // Input,
+    // Link,
+    // Select,
+    // SimpleGrid,
+    // Stack,
     Text,
   } from "@chakra-ui/react";
-import React from 'react'
+// import React from 'react'
 import { RouteNavbar } from "../component/RouteNavbar";
 
 const Teachers = () => {

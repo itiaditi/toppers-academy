@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { LandingPage } from '../pages/LandingPage';
 import Login from '../pages/Login';
 import Signup from './Signup';
-import { SearchComponent } from '../pages/SearchComponent';
+// import { SearchComponent } from '../pages/SearchComponent';
 import Card1 from '../component/Body';
 import Profile from '../pages/Profile';
 import Teachers from '../pages/Teachers';
@@ -17,7 +17,7 @@ const AllRoutes: React.FC = () => {
             <Route path="/" element={<LandingPage/>} />           
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<Signup/>}/>
-            <Route path="/search" element={<SearchComponent/>}/>
+            {/* <Route path="/search" element={<SearchComponent/>}/> */}
             <Route path="/card" element={<Card1/>}/>
     <Route path="/profile" element={<Profile/>} />
     <Route path="/progress" element={<Progress />} />

@@ -1,23 +1,22 @@
 import {
   Box,
   Button,
-  ButtonGroup,
+  // ButtonGroup,
   Card,
   CardBody,
   CardFooter,
-  CardHeader,
+  // CardHeader,
   Divider,
   Flex,
-  Grid,
+  // Grid,
   Heading,
   Image,
   Link,
   SimpleGrid,
   Stack,
   Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
+// import React from "react";
 import { RouteNavbar } from "../component/RouteNavbar";
 
 const Profile = () => {

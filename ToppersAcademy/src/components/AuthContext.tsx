@@ -1,5 +1,5 @@
 import { createContext, useState, ReactNode } from 'react';
-import { useToast } from '@chakra-ui/react';
+// import { useToast } from '@chakra-ui/react';
 
 interface User {
   id: number;
@@ -48,7 +48,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isAuth, setIsAuth] = useState<boolean>(false);
   const [ClassData,setClassData]=useState<CourseClass[]>([]);
-  const toast = useToast();
+  // const toast = useToast();
   
 
   const signup = async (userData: User) => {

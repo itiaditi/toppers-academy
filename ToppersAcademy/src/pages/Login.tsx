@@ -18,16 +18,16 @@ import {
 import { useContext } from 'react';
 import { AuthContext } from '../components/AuthContext';
 import { useToast } from '@chakra-ui/react';
-import Body from '../component/Body'
+// import Body from '../component/Body'
 import { Navigate } from 'react-router-dom';
 
 export default function Login() {
     const { login , isAuth } = useContext(AuthContext);
     const toast = useToast();
-    interface Credentials {
-        email: string;
-        password: string;
-    }
+    // interface Credentials {
+    //     email: string;
+    //     password: string;
+    // }
     
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

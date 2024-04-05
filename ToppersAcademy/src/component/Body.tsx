@@ -2,32 +2,22 @@ import {
   Box,
   Button,
   Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Center,
-  Divider,
+
   Flex,
   Grid,
-  GridItem,
-  Heading,
+  
   Image,
   Link,
   SimpleGrid,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { SlideFade } from "@chakra-ui/react";
 
-
-import { color } from "framer-motion";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import { AuthContext } from "../components/AuthContext";
 import { BasicUseage } from "./BasicUseage";
-import { NavLink } from "react-router-dom";
-import AllRoutes from "./components/AllRoutes";
-import Body from "./components/Body";
+
 import { RouteNavbar } from "./RouteNavbar";
 
 
@@ -58,11 +48,11 @@ interface CardString{
   CardString:string[];
   Data:number;
 }
-interface CourseClass {
-  [x: string]: any;
-  grade: number;
-  titles: string[];
-}
+// interface CourseClass {
+//   [x: string]: any;
+//   grade: number;
+//   titles: string[];
+// }
 const CardComponent:React.FC<CardString> =({CardString,Data})=>{
   
   const [isHovered, setIsHovered] = React.useState<boolean>(false);
