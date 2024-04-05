@@ -1,18 +1,18 @@
 import { ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
 import { Box, Button, Center, Flex, Grid, HStack, Image, Input, InputGroup, InputRightElement, Link, Menu, MenuButton, MenuList } from "@chakra-ui/react";
 import { useContext, useState } from "react";
-import { SearchComponent } from "../pages/SearchComponent";
+// import { SearchComponent } from "../pages/SearchComponent";
 import { NavLink, useNavigate} from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { LandingPage } from "../pages/LandingPage";
-import { AllRoutes } from "./AllRotes";
+// import { useHistory } from "react-router-dom";
+// import { LandingPage } from "../pages/LandingPage";
+// import { AllRoutes } from "./AllRotes";
 import { AuthContext } from "./AuthContext";
 
 
 const Navbar: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [showSearchComponent, setShowSearchComponent] = useState<boolean>(false);
-    const { login ,setIsAuth, isAuth } = useContext(AuthContext);
+    const {  setIsAuth, isAuth } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
         navigate('/search');
         setShowSearchComponent(true);
     };
-
+console.log(showSearchComponent);
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             handleSearch();
