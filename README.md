@@ -7,7 +7,7 @@ Toppers Academy is a free educational platform aimed at providing users with res
 Fullstack
 
 ## Deployed App
-Frontend:
+Frontend:https://toppers-academy-henna.vercel.app/
 Backend:(https://toppers-academy.onrender.com/)  
 Database: Json
 
