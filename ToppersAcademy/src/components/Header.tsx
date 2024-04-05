@@ -6,7 +6,7 @@ const Header: React.FC = () => {
     return (
         <HStack pr={"150px"} pl={"150px"} mt={50}>
             <Box>
-                <Image src="./src/assets/hero_student_collage_IN_1x.png" p="50px" w={700} />
+                <Image src="https://cdn.kastatic.org/images/lohp/hero_student_collage_IN_1x.png" p="50px" w={700} />
             </Box>
             <Box>
                 <Heading fontFamily="Source Serif 4, serif" fontWeight="600">

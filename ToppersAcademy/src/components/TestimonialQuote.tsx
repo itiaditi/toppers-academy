@@ -11,7 +11,7 @@ const TestimonialQuote: React.FC = () => {
                     <Text as="b" letterSpacing={2}>ANJALI</Text> <br />
                     <Text as="i">GURUGRAM, HARYANA</Text>
                 </Box>
-                <Image src=".\src\assets\anjali-3.png" w={130} ml={10} />
+                <Image src="https://cdn.kastatic.org/images/lohp/anjali-3.png" w={130} ml={10} />
             </Flex>
         </VStack>
 

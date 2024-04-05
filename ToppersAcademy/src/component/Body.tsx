@@ -55,8 +55,8 @@ interface CardString{
 // }
 const CardComponent:React.FC<CardString> =({CardString,Data})=>{
   
-  const [isHovered, setIsHovered] = React.useState<boolean>(false);
-  setIsHovered(false);
+  const [isHovered] = React.useState<boolean>(false);
+  
   return(
     <Card  width="325px" h={370}
         boxShadow={isHovered ? "xl" : "md"}

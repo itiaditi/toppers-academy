@@ -6,7 +6,7 @@ const GiveThemChance: React.FC = () => {
     return (
         <HStack pr={"150px"} pl={"180px"} pt={70} pb={50} alignItems="start">
             <Box w="55%">
-                <Image src=".\src\assets\math-unicorn-donate-collage.png" p="50px" mt={-10} ml={-50}/>
+                <Image src="https://cdn.kastatic.org/images/lohp/math-unicorn-donate-collage.png" p="50px" mt={-10} ml={-50}/>
             </Box>
             <Box w="40%">
                 <Text fontSize={14} letterSpacing={1} mb={5} color="#989a9d">TOGETHER WE CAN MAKE A DIFFERENCE</Text>

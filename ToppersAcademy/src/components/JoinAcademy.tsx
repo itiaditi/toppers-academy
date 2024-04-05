@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button, ButtonGroup, Center, Text, VStack } from '@chakra-ui/react';
 
-const backgroundImage: string = "url('./src/assets/last_chance_collage@2x.png')";
+const backgroundImage: string = "url('https://cdn.kastatic.org/images/lohp/last_chance_collage@2x.png')";
 
 const JoinAcademy: React.FC = () => {
     return (
