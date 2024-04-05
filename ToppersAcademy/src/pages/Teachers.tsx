@@ -12,10 +12,13 @@ import {
     Text,
   } from "@chakra-ui/react";
 import React from 'react'
+import { RouteNavbar } from "../component/RouteNavbar";
 
 const Teachers = () => {
   return (
-    <Box marginLeft={7} marginTop={7}>
+    <Box mt={'4rem'}>
+    <RouteNavbar/>
+    <Box p={10}>
     <Flex alignItems="center">
       <Text fontSize={28} fontWeight="bold">
       My teachers and tutors
@@ -23,17 +26,18 @@ const Teachers = () => {
      
     </Flex>
     <br />
-    <Flex alignItems="center" gap={10}>
-      <Text fontSize={12}>
+    <Flex mb={6}justifyContent={'space-between'}>
+      <Text fontSize={16}>
       Teachers have access to all of your Toppers Academy data.
       </Text>
-     <Text fontSize={12}>
+     <Text fontSize={16}>
      Your student id is kaid_303273529688601849604072
      </Text>
     </Flex>
-  <Divider borderColor="black" borderWidth="1px" fontWeight="bold" />
+  <Divider  borderBottom='1px solid lightgrey'  />
     <br />
-    <Flex alignItems="center" gap={40}>
+
+<Flex alignItems="center" gap={40}>
       <Text fontSize={20} fontWeight="bold">
       Join A Class
       </Text>
@@ -44,22 +48,18 @@ const Teachers = () => {
     <br />
     <Flex alignItems="center" gap={20}>
      <Button color="white" bg="blue">Enter Class Code</Button>
-      <Text fontSize={12} fontWeight="bold">
+      <Text p={4} borderBottom="1px solid lightgrey" borderTop="1px solid lightgrey"fontSize={12} fontWeight="bold">
       You have no coaches! Why not try adding one?
      </Text>
     </Flex>
-    <br />
-    <Divider borderColor="black" borderWidth="1px" fontWeight="bold" />
-    <br />
-    <Text fontSize={20}>Add a Teacher</Text>
+
     <br />
     
-    <Text>Enter your teachers's email address:</Text>
-    <Flex>
-    <Input placeholder='Email(yourteacherExample@gmail.com' />
-    <Button>Add a teacher</Button>
-    </Flex>
+    
+    
    
+   
+  </Box>
   </Box>
   
   

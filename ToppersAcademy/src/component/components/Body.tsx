@@ -11,7 +11,7 @@ import AllRoutes from "./AllRoutes";
 const Body = () => {
   return (
     <div>
-      <SimpleGrid spacing={2} columns={[1, null, 3]}>
+      <SimpleGrid bg={'red'} spacing={2} columns={[1, null, 3]}>
         <Card paddingLeft={["0px", null, "200px"]} paddingTop={["20px", null, "40px"]}>
           <Box _hover={{ cursor: 'pointer', boxShadow: 'md', bg: 'gray.100', height: "40px" }} display="flex" alignItems="center">
             <Text fontSize={14}>MY STUFF</Text>

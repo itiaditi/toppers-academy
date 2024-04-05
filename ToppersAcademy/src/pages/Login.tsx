@@ -19,6 +19,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../components/AuthContext';
 import { useToast } from '@chakra-ui/react';
 import Body from '../component/Body'
+import { Navigate } from 'react-router-dom';
 
 export default function Login() {
     const { login , isAuth } = useContext(AuthContext);
@@ -56,11 +57,11 @@ export default function Login() {
         }
       };
       if (isAuth) {
-        return <Body />;
+        return <Navigate to="/dashboard"/>;
       }
       
     return (
-        <Box position={'relative'} p={0}>
+        <Box mt={20} position={'relative'} p={0}>
             <Container
                 as={SimpleGrid}
                 maxW={'7xl'}
@@ -91,19 +92,19 @@ export default function Login() {
                     rounded={'xl'}
                     p={{ base: 1, sm: 6, md: 8 }}
                     spacing={{ base: 8 }}
-                    maxW={{ lg: 'lg' }}>
-                    <Box as={'form'} mt={10} onSubmit={handleSubmit}>
+                   >
+                    <Box as={'form'}  onSubmit={handleSubmit}>
                         <Stack spacing={4}>
                             <Flex
                                 minH={'100vh'}
                                 align={'center'}
                                 justify={'center'}
                                 bg={useColorModeValue('gray.50', 'gray.800')}>
-                                <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+                                <Stack spacing={8} mx={'auto'}  >
                                     <Stack align={'center'}>
                                         <Heading fontSize={'4xl'}>Log In</Heading>
                                     </Stack>
-                                    <Box
+                                    <Box w={'25rem'}
                                         rounded={'lg'}
                                         bg={useColorModeValue('white', 'gray.700')}
                                         boxShadow={'lg'}

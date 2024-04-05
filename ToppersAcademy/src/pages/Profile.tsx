@@ -18,22 +18,28 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import { RouteNavbar } from "../component/RouteNavbar";
 
 const Profile = () => {
   return (
-    <div>
-      <SimpleGrid
-        spacing={8}
-        rowGap={8}
-        templateColumns="repeat(2, 1fr)"
-        gap={5}
-      >
-        <Box marginLeft={7} marginTop={7}>
-          <Text fontSize={28} fontWeight="bold">
-            MY Profile
+    <Box mt={'4rem'}>
+    <RouteNavbar/>
+      <Box p={8} bg="#edf3fe">
+      <Text fontSize={28} fontWeight="bold">
+            My Profile
           </Text>
+      </Box>
+      <SimpleGrid
+     p={30}
+        rowGap={0}
+        templateColumns="repeat(2, 1fr)"
+        gap={0}
+        
+      >
+        <Flex justifyContent={'center'}>
+         
           <br />
-          <Card maxW="sm" width={350}>
+          <Card boxShadow={'md'}  h={340} width={450}>
             <CardBody>
               <Heading size="md" fontSize={15}>
                 ShowCase
@@ -72,11 +78,12 @@ const Profile = () => {
               </SimpleGrid>
             </CardFooter>
           </Card>
-        </Box>
+        </Flex>
 
-        <Box marginLeft={8} marginTop={16}>
-          <br />
-          <Card maxW="sm" width={350}>
+       
+          
+         <Flex justifyContent={'center'} h={'200'} > 
+         <Card boxShadow={'md'}  width={450}>
             <CardBody>
               <Flex alignItems="center" gap={3}>
                 <Heading size="md" fontSize={16}>
@@ -101,12 +108,12 @@ const Profile = () => {
                   <Image src="https://cdn.kastatic.org/images/badges/moon-60x60.png" />
                   <Image src="https://cdn.kastatic.org/images/badges/meteorite-60x60.png" />
                 </SimpleGrid>
-                <Link textAlign="right">check for new badges and avatar</Link>
+                <Link textAlign="right" color="blue">check for new badges and avatar</Link>
               </Stack>
             </CardBody>
-          </Card>
-          <br />
-          <Card maxW="sm" width={350}>
+          </Card></Flex>
+         
+          <Flex mt={4}justifyContent={'center'} h={340}><Card  width={450}>
             <CardBody>
               <Flex alignItems="center" gap={3}>
                 <Heading size="md" fontSize={16}>
@@ -122,47 +129,28 @@ const Profile = () => {
                 borderWidth="1px"
                 fontWeight="bold"
               />
-              <Stack mt="6" spacing="3">
-                <SimpleGrid spacing={2} templateColumns="repeat(2, 1fr)">
+              <Stack p={30}>
+                <Flex justifyContent={'space-between'}>
+                  <Flex justifyContent={'center'}  h={'20%'} w={'20%'}>
                   <Image src="https://cdn.kastatic.org/images/scratchpads/happy-critter.png" />
-                  <Box>
-                    <Text>You don't have any projects yet.</Text>
-                    <Button color="white" bg="blue">Learn Programming</Button>
-                    <br />
-                    <br />
-                    <Button color="blue" bg="white" border="2px solid black">Learn Programming</Button>
-                    <Link fontSize={15} color="blue">browse programs made by other users</Link>
-                  </Box>
-                </SimpleGrid>
+                 
+                  </Flex>
+                  <Flex alignItems={'center'} flexDirection={'column'} rowGap={4}  h={'100%'}textAlign={'center'} w={'80%'}>
+                    <Text fontWeight={600} >You don't have any projects yet.</Text>
+                    <Button w={'10rem'}color="white" bg="blue">Learn Programming</Button>
+                    
+                    <Button w={'10rem'} color="blue" bg="white" border="1px solid lightgrey">Learn Programming</Button>
+                    <Link fontSize={15} color="blue">Browse programs made by other users</Link>
+                  </Flex>
+                </Flex>
               </Stack>
             </CardBody>
-          </Card>
-          <br />
-          <Card maxW="sm" width={350}>
-            <CardBody>
-              <Flex alignItems="center" gap={3}>
-                <Heading size="md" fontSize={16}>
-                  Discussion 
-                </Heading>
-                <Link color="blue">view all</Link>
-              </Flex>
-
-              <br />
-
-              <Divider
-                borderColor="black"
-                borderWidth="1px"
-                fontWeight="bold"
-              />
-              <Stack mt="6" spacing="3">
-              <br />
-              <br /><br />
-              </Stack>
-            </CardBody>
-          </Card>
-        </Box>
+          </Card></Flex>
+         
+       
+        
       </SimpleGrid>
-    </div>
+    </Box>
   );
 };
 

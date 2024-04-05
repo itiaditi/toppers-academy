@@ -1,16 +1,19 @@
 import { ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
 import { Box, Button, Center, Flex, Grid, HStack, Image, Input, InputGroup, InputRightElement, Link, Menu, MenuButton, MenuList } from "@chakra-ui/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { SearchComponent } from "../pages/SearchComponent";
 import { NavLink, useNavigate} from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { LandingPage } from "../pages/LandingPage";
 import { AllRoutes } from "./AllRotes";
+import { AuthContext } from "./AuthContext";
 
 
 const Navbar: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [showSearchComponent, setShowSearchComponent] = useState<boolean>(false);
+    const { login ,setIsAuth, isAuth } = useContext(AuthContext);
+
     const navigate = useNavigate();
 
     const handleSearch = () => {
@@ -23,6 +26,9 @@ const Navbar: React.FC = () => {
             handleSearch();
         }
     };
+    const handleLogout = ()=>{
+        setIsAuth(false)
+    }
 
     return (
         <>
@@ -129,14 +135,64 @@ const Navbar: React.FC = () => {
 
                 <Center>
                     <NavLink to="/">
-                       <Box> <Image src='.\src\assets\toppers-academy.png' alt='logo' /></Box>
+                       <Box w="150px"> <Image src='.\src\assets\toppers-academy.png' alt='logo' /></Box>
                     </NavLink>
                 </Center>
 
-                <HStack gap={"30px"} pl={"160px"}>
+                <HStack gap={"30px"} pl={"55px"}>
                     <Link href="#" w={"75px"} fontWeight={500}>Donate <i className="fa-solid fa-arrow-up-right-from-square"></i></Link>
-                    <NavLink to='/login' >LogIn</NavLink>
-                    <NavLink to="/signup" >SignUp</NavLink>
+                  {!isAuth?<Flex pl={4} columnGap={3}>   <NavLink to='/login' ><Button  display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              cursor={"pointer"}
+              color={"white"}
+              bg={"blue"}
+              _hover={{
+                bg: "blue.500"}}>LogIn</Button></NavLink>
+                    <NavLink to="/signup" >
+                    <Button  display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              cursor={"pointer"}
+              color={"white"}
+              bg={"blue"}
+              _hover={{
+                bg: "blue.500"}}>SignUp</Button>
+                        </NavLink></Flex>:
+                    <NavLink to='/'>
+                          <Flex  pl={4} columnGap={3}>
+                          <Button
+              onClick={handleLogout}
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              cursor={"pointer"}
+              color={"white"}
+              bg={"blue"}
+              _hover={{
+                bg: "blue.500",
+              }}
+            >
+             LogOut
+            </Button>
+           <NavLink to="/dashboard"> <Button
+             
+             display={{ base: "none", md: "inline-flex" }}
+             fontSize={"sm"}
+             fontWeight={600}
+             cursor={"pointer"}
+             color={"blue"}
+             bg={"#edf3fe"}
+             _hover={{
+               bg: "#edf4fe",
+             }}
+           >
+            Dashboard
+           </Button></NavLink>
+                          </Flex>
+                        </NavLink>}
+                 
+              
                    
                 </HStack>
             </Flex>

@@ -5,7 +5,7 @@ import { Box, HStack, Link, VStack } from "@chakra-ui/layout"
 const CoursesLandingPage: React.FC = () => {
     return (
         <>
-            <HStack mr={180} ml={180} p={55} backgroundColor="#f5f5f5" justifyContent="space-between" alignItems="start">
+            <HStack mr={160} ml={160} p={55} pl={30} backgroundColor="#f5f5f5" justifyContent="space-between" alignItems="start">
                 <VStack>
                     <Accordion defaultIndex={[0]} allowMultiple w={480}>
                         <AccordionItem>

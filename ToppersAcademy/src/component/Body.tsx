@@ -6,6 +6,7 @@ import {
   CardFooter,
   CardHeader,
   Center,
+  Divider,
   Flex,
   Grid,
   GridItem,
@@ -16,148 +17,157 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { SlideFade } from "@chakra-ui/react";
+
+
 import { color } from "framer-motion";
-import React from "react";
+import React, { useContext, useState } from "react";
+
+import { AuthContext } from "../components/AuthContext";
 import { BasicUseage } from "./BasicUseage";
+import { NavLink } from "react-router-dom";
+import AllRoutes from "./components/AllRoutes";
+import Body from "./components/Body";
+import { RouteNavbar } from "./RouteNavbar";
 
 
 
 
+interface CardData{
+  title:String;
+}
+const CardBodyData :React.FC<CardData>=({title})=>{
+  return(
+    <Flex justifyContent="space-between" columnGap={7}>
+    <Flex w={14} justifyContent={"center"}  >
+      <Image
+        height={10}
+        style={{ borderRadius: "50%" }}
+        src="https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png"
+      />
+    </Flex>
+    <Flex alignItems={"center"} w={"80%"}>
+    <Text>{title}</Text>
+    </Flex>
+  </Flex>
+  )
+ 
+}
+
+interface CardString{
+  CardString:string[];
+  Data:number;
+}
+interface CourseClass {
+  [x: string]: any;
+  grade: number;
+  titles: string[];
+}
+const CardComponent:React.FC<CardString> =({CardString,Data})=>{
+  
+  const [isHovered, setIsHovered] = React.useState<boolean>(false);
+  return(
+    <Card  width="325px" h={370}
+        boxShadow={isHovered ? "xl" : "md"}
+        transition="box-shadow 0.3s ease"
+        cursor="pointer">
+        <Flex justifyContent={"space-evenly"}  borderBottom="2px solid #E5E7EB">
+          <Box w={"57%"} >
+          <Text fontSize="27px" fontWeight="bold" paddingTop="30px"  mb={5}>
+            Class {Data}
+          </Text>
+          </Box>
+          <Flex  alignItems={"center"} mt={4} fontSize={"1.1rem"}>
+            <Link color="blue">see all(2)</Link>
+          </Flex>
+          </Flex>
+          <Flex flexDirection={"column"} rowGap={4} pl={4} pt={7} h={"100%"}>
+            {
+              CardString.map((el,index)=>{
+                 return(
+                  <CardBodyData title={el} key={index}/>
+                 )
+              })
+            }
+         </Flex>
+        <Flex p={2} justifyContent={'center'}> <Button
+         width={'6rem'}
+         h={'2rem'}
+         p={3}
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              cursor={"pointer"}
+              color={"white"}
+              bg={"#1858DB"}
+              _hover={{
+                bg: "blue.700",
+              }}
+            >
+              Start 
+            </Button></Flex>
+        </Card>
+  )
+}
 
 
-const Body :React.FC= () => {
-    
+
+const Card1 :React.FC= () => {
+    const{ClassData} =useContext(AuthContext);
+   console.log(ClassData)
+   const bgColor = useColorModeValue("gray.50", "gray.800");
+   const borderColor = useColorModeValue("gray.200", "gray.600");
+ 
   return (
-    <div>
-      <SimpleGrid spacing={2} templateColumns="repeat(3, 1fr)">
-   
-<Card paddingLeft="200px" paddingTop="40px">
-  <Box _hover={{ cursor: 'pointer', boxShadow: 'md', bg: 'gray.100' ,height:"40px"}} display="flex" alignItems="center">
-    <Text fontSize={14}>MY STUFF</Text>
-  </Box>
-  <br />
-  <Box _hover={{ cursor: 'pointer', boxShadow: 'md', bg: 'gray.100' ,height:"40px"}}display="flex" alignItems="center">
-    <Text fontSize={14}>COURSES</Text>
-  </Box>
-  <br />
-  <Box _hover={{ cursor: 'pointer', boxShadow: 'md', bg: 'gray.100',height:"40px" }}display="flex" alignItems="center">
-    <Text fontSize={14}>MY ACCOUNT</Text>
-  </Box>
-  <br />
-  <Box _hover={{ cursor: 'pointer', boxShadow: 'md', bg: 'gray.100',height:"40px" }}display="flex" alignItems="center">
-    <Text fontSize={14}>PROGRESS</Text>
-  </Box>
-  <br />
-  <Box _hover={{ cursor: 'pointer', boxShadow: 'md', bg: 'gray.100',height:"40px" }} display="flex" alignItems="center">
-    <Text fontSize={14}>PROFILE</Text>
-  </Box>
-  <br />
-  <Box _hover={{ cursor: 'pointer', boxShadow: 'md', bg: 'gray.100',height:"40px" }} display="flex" alignItems="center">
-    <Text fontSize={14}>TEACHERS</Text>
-  </Box>
-</Card>
-
-        <Card width="350px">
-          <Text fontSize="27px" paddingLeft={12} fontWeight="bold" paddingTop="30px">
+    <Box mt={"4rem"}>
+   <RouteNavbar/>
+      <SimpleGrid  w={'100%'}  spacing={2}   >
+    
+       <Box bg={'#d9d9d9'}>
+        <Flex  justifyContent={"space-evenly"} bg={"#edf3fe"}>
+          <Box w={"80%"}>
+          <Text fontSize="27px" paddingLeft={12} fontWeight="bold" paddingTop="30px" textAlign={"center"} mb={5}>
             MY COURSES
           </Text>
-          <br />
-          <Flex justifyContent="space-around" paddingLeft={3}>
-            <Text>class 2</Text>
-            <Link color="blue">seeall(4)</Link>
-            <hr />
+          </Box>
+          <Flex  alignItems={"center"}>
+          <BasicUseage/>
           </Flex>
-          <br />
-          <Flex justifyContent="space-evenly" alignItems="center">
-            <Box>
-              <Image
-                height={10}
-                style={{ borderRadius: "50%" }}
-                src="https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png"
-              />
-            </Box>
-            <Text>Numbers from 1 to 10</Text>
-            <Button color="white" bg="blue">
-              start
-            </Button>
           </Flex>
-          <br />
-          <Flex justifyContent="space-even" alignItems="center">
-            <Box>
-              <Image
-                height={10}
-                style={{ borderRadius: "50%" }}
-                marginLeft={5}
-                src="https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png"
-              />
-            </Box>
-            <div>
-              <Text paddingLeft={8}>
-                Addition and Substraction without regrouping
-              </Text>
-            </div>
-          </Flex>
-          <br />
-          <Flex justifyContent="space-around" alignItems="center">
-            <Box>
-              <Image
-                height={10}
-                style={{ borderRadius: "50%" }}
-                marginLeft={5}
-                src="https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png"
-              />
-            </Box>
-            <Text paddingLeft={8}>
-              Addition and Substraction with regrouping
-            </Text>
-          </Flex>
-          <br />
-          <Flex justifyContent="space-around" alignItems="center">
-            <Box>
-              <Image
-                height={10}
-                style={{ borderRadius: "50%" }}
-                paddingLeft={1}
-                src="https://cdn.kastatic.org/genfiles/topic-icons/icons/math.png-444b34-128c.png"
-              />
-            </Box>
-            <Text paddingRight={12}>Geometry and Measurement</Text>
-          </Flex>
-        </Card>
-
-        <Card>
-          <CardHeader>
-           
-            
-            <BasicUseage/>
-
-          </CardHeader>
-          <CardBody>
-            <Box bg={useColorModeValue("gray.100", "gray.900")} h={400} w={450} display="flex" alignItems="center" justifyContent="center">
-              <Flex flexDirection="column" alignItems="center">
-                <Box
-                  style={{
-                    borderRadius: "50%",
-                    backgroundColor: "lightgray",
-                    width: "50px",
-                    height: "50px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Text fontSize={40}>+</Text>
-                  
-                </Box>
-                <Text>Add Another Course</Text>
-              </Flex>
-            </Box>
-          </CardBody>
-        </Card>
+          {ClassData.length<=0?   
+      <Flex
+      
+        padding={60}
+        borderWidth="1px"
+        borderRadius="md"
+        borderColor={borderColor}
+        backgroundColor={bgColor}
+        boxShadow="md"
+        alignItems="center"
+        justifyContent={"center"}
+      >
+        <Text fontSize={30} fontWeight={700} color="grey.600">No data available. Please add some data.</Text>
+      </Flex>
+  
+:<Grid p={3} mb={10} templateColumns={"repeat(4,1fr)"} columnGap={"0.5rem"}  w={"67rem"} rowGap={"1rem"} mt={4}>
+          {
+            ClassData.map((el)=>{
+             return   <CardComponent  CardString={el.titles} Data={el.grade} key={el.grade}  />
+            })
+          }
+        
+       
+        </Grid>}
+         
+        
+        </Box>
+       
       </SimpleGrid>
      
-    </div>
+    </Box>
   );
 };
 
-export default Body;
+export default Card1;
+
+const CardString:string[]=["Numbers from 1 to 10","Addition and Substraction without regrouping","Addition and Substraction with regrouping","Geometry and Measurement"]
