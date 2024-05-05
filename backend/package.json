@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "eslint": "^9.2.0",
     "json-server": "0.16.1",
     "json-server-auth": "2.1.0"
   }
